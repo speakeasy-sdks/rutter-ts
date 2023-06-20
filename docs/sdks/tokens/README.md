@@ -16,9 +16,9 @@ import { ExchangeTokenResponsePlatform } from "rutter-api/dist/sdk/models/shared
 const sdk = new Rutter();
 
 sdk.tokens.exchangePublicToken({
-  clientId: "rerum",
-  publicToken: "molestiae",
-  secret: "quaerat",
+  clientId: "maiores",
+  publicToken: "nam",
+  secret: "pariatur",
 }).then((res: ExchangePublicTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response

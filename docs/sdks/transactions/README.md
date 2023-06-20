@@ -23,15 +23,15 @@ import {
 const sdk = new Rutter();
 
 sdk.transactions.listTransactions({
-  accessToken: "b8421953-b44b-4d3c-8315-9d33e5953c00",
-  createdAtMax: 116742,
-  createdAtMin: 73787,
-  cursor: "amet",
-  forceFetch: ForceFetch.False,
-  limit: 552512,
-  sort: Sort.Desc,
-  updatedAtMax: 193048,
-  updatedAtMin: 632885,
+  accessToken: "c41ff5d4-e2ae-44fb-9cb3-5d17638f1edb",
+  createdAtMax: 497363,
+  createdAtMin: 540416,
+  cursor: "consectetur",
+  forceFetch: ForceFetch.True,
+  limit: 592760,
+  sort: Sort.Asc,
+  updatedAtMax: 793260,
+  updatedAtMin: 773479,
 }).then((res: ListTransactionsResponse) => {
   if (res.statusCode == 200) {
     // handle response

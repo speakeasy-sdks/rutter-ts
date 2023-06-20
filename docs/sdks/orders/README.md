@@ -24,19 +24,23 @@ sdk.orders.createFulfillment({
     additionalFields: {
       notifyCustomer: false,
     },
-    carrier: "ullam",
+    carrier: "consectetur",
     lineItems: [
       {
-        lineItemId: "delectus",
-        quantity: 2767.95,
+        lineItemId: "vitae",
+        quantity: 2569.75,
+      },
+      {
+        lineItemId: "incidunt",
+        quantity: 2669.76,
       },
     ],
-    locationId: "quod",
-    service: "sunt",
-    trackingNumber: "ullam",
-    trackingUrl: "quam",
+    locationId: "quos",
+    service: "minus",
+    trackingNumber: "voluptate",
+    trackingUrl: "error",
   },
-}, "deaa7170-f445-4acc-b667-aaf9bbad185f", "voluptates").then((res: CreateFulfillmentResponse) => {
+}, "77a0ef2f-5360-428e-beef-934152ed7e25", "non").then((res: CreateFulfillmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -79,55 +83,51 @@ const sdk = new Rutter();
 sdk.orders.createOrder({
   order: {
     billingAddress: {
-      address1: "ut",
-      address2: "nesciunt",
-      city: "Port Gerardocester",
-      countryCode: "VN",
-      email: "Norma54@yahoo.com",
-      firstName: "Wilhelm",
-      lastName: "Ratke",
-      phone: "671.277.4497 x2721",
-      postalCode: "95583",
-      region: "eos",
+      address1: "delectus",
+      address2: "incidunt",
+      city: "Casperbury",
+      countryCode: "KG",
+      email: "Ted.Nitzsche7@hotmail.com",
+      firstName: "Izabella",
+      lastName: "Abshire",
+      phone: "423.778.9334 x66957",
+      postalCode: "68053-9922",
+      region: "ab",
     },
-    currencyCode: "amet",
+    currencyCode: "quibusdam",
     customer: {
-      email: "Ottilie.McCullough73@gmail.com",
-      firstName: "Isai",
-      lastName: "Monahan",
+      email: "Maurine_Wintheiser@yahoo.com",
+      firstName: "Junius",
+      lastName: "Donnelly",
     },
     lineItems: [
       {
-        quantity: 9503.37,
-        variantId: "recusandae",
+        quantity: 9797.06,
+        variantId: "expedita",
       },
       {
-        quantity: 7115.72,
-        variantId: "iusto",
+        quantity: 7024.18,
+        variantId: "totam",
       },
       {
-        quantity: 4564.73,
-        variantId: "harum",
-      },
-      {
-        quantity: 3216.54,
-        variantId: "quod",
+        quantity: 7992.36,
+        variantId: "aspernatur",
       },
     ],
     shippingAddress: {
-      address1: "ratione",
-      address2: "totam",
-      city: "Eugene",
-      countryCode: "PM",
-      email: "Wiley90@yahoo.com",
-      firstName: "Emelie",
-      lastName: "Bechtelar",
-      phone: "1-995-606-3272 x439",
-      postalCode: "49348",
-      region: "nesciunt",
+      address1: "eaque",
+      address2: "impedit",
+      city: "Jaskolskimouth",
+      countryCode: "VI",
+      email: "Ebba17@hotmail.com",
+      firstName: "Estell",
+      lastName: "VonRueden",
+      phone: "(683) 322-7594 x7468",
+      postalCode: "97446-3815",
+      region: "vero",
     },
   },
-}, "85a3c4ac-631b-499e-a6ce-d8f9fdb9410f").then((res: CreateOrderResponse) => {
+}, "4baf91e5-06ef-4890-a54b-475f16f56d38").then((res: CreateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -169,7 +169,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.orders.getOrder("63bbf817-837b-401a-bdd7-88624189eb44", "873f5033-f19d-4bf1-a5ce-4152eab9cd7e", Expand1.Transactions, ForceFetch.True).then((res: GetOrderResponse) => {
+sdk.orders.getOrder("5a3c4ac6-31b9-49e2-aced-8f9fdb9410f6", "3bbf8178-37b0-41af-9d78-8624189eb448", Expand1.Transactions, ForceFetch.True).then((res: GetOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -216,20 +216,20 @@ import {
 const sdk = new Rutter();
 
 sdk.orders.listOrders({
-  accessToken: "224a6a0e-123b-4784-bec5-9e1f67f3c4cc",
-  createdAtMax: 922207,
-  createdAtMin: 273349,
-  cursor: "libero",
+  accessToken: "3f5033f1-9dbf-4125-8e41-52eab9cd7e52",
+  createdAtMax: 138306,
+  createdAtMin: 259374,
+  cursor: "error",
   expand: Expand1.Transactions,
   forceFetch: ForceFetch.True,
-  fulfillmentStatus: FulfillmentStatus.Unknown,
-  limit: 478576,
-  orderNumber: 401083,
-  paymentStatus: PaymentStatus.Refunded,
-  phone: "1-992-834-2430 x123",
-  properties: "nihil",
-  updatedAtMax: 887865,
-  updatedAtMin: 293799,
+  fulfillmentStatus: FulfillmentStatus.Partial,
+  limit: 903,
+  orderNumber: 930398,
+  paymentStatus: PaymentStatus.Pending,
+  phone: "1-374-624-8736",
+  properties: "recusandae",
+  updatedAtMax: 102754,
+  updatedAtMin: 974788,
 }).then((res: ListOrdersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -274,7 +274,7 @@ sdk.orders.updateOrder({
   order: {
     status: UpdateOrderBodyOrderStatus.Archived,
   },
-}, "f51f8b08-4c31-497e-993a-245467f94874", "c2d5cc49-7223-43e6-abd8-fe5d00b979ef").then((res: UpdateOrderResponse) => {
+}, "7f3c4cce-4b6d-4769-aff3-c5747501357e", "44f51f8b-084c-4319-be19-3a245467f948").then((res: UpdateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

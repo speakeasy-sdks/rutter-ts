@@ -556,9 +556,9 @@ docs/models/shared/asyncresponsepayloaderrorssource.md
 docs/models/shared/asyncresponsepayloaderrors.md
 docs/models/shared/asyncresponsepayload.md
 docs/models/shared/createcreateaccountrequest.md
-docs/models/shared/createaccountaccounttype.md
+docs/models/shared/accounttype.md
 docs/models/shared/createaccountadditionalfields.md
-docs/models/shared/createaccountcurrencycode.md
+docs/models/shared/currencycode.md
 docs/models/shared/createaccount.md
 docs/models/shared/attachmentresponse.md
 docs/models/shared/attachment.md

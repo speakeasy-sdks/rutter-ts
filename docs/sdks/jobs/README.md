@@ -15,7 +15,7 @@ import { AsynchronousJobStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.jobs.getJob("quis").then((res: GetJobResponse) => {
+sdk.jobs.getJob("excepturi").then((res: GetJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
