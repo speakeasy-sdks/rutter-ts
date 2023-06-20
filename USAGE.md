@@ -2,22 +2,22 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { CreateAccountResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateAccountAccountType, CreateAccountCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { AccountType, CurrencyCode } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
 sdk.accounting.createAccount({
   account: {
-    accountType: CreateAccountAccountType.OtherExpense,
+    accountType: AccountType.AccountsPayable,
     additionalFields: {
-      bankAccountNumber: "provident",
+      bankAccountNumber: "00000-00-00000",
     },
-    currencyCode: CreateAccountCurrencyCode.Sdg,
-    name: "Stuart Stiedemann",
-    nominalCode: "vel",
-    subsidiaryId: "error",
+    currencyCode: CurrencyCode.Usd,
+    name: "Acme Corp.",
+    nominalCode: "1001",
+    subsidiaryId: "00000000-0000-0000-0000-000000000000",
   },
-}, "a674e0f4-67cc-4879-aed1-51a05dfc2ddf").then((res: CreateAccountResponse) => {
+}, "89bd9d8d-69a6-474e-8f46-7cc8796ed151").then((res: CreateAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

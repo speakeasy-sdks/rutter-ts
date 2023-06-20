@@ -72,22 +72,22 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { CreateAccountResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateAccountAccountType, CreateAccountCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { AccountType, CurrencyCode } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
 sdk.accounting.createAccount({
   account: {
-    accountType: CreateAccountAccountType.Expense,
+    accountType: AccountType.AccountsPayable,
     additionalFields: {
-      bankAccountNumber: "quod",
+      bankAccountNumber: "00000-00-00000",
     },
-    currencyCode: CreateAccountCurrencyCode.Top,
-    name: "Deanna Sauer MD",
-    nominalCode: "officia",
-    subsidiaryId: "occaecati",
+    currencyCode: CurrencyCode.Usd,
+    name: "Acme Corp.",
+    nominalCode: "1001",
+    subsidiaryId: "00000000-0000-0000-0000-000000000000",
   },
-}, "28fc8167-42cb-4739-a059-29396fea7596").then((res: CreateAccountResponse) => {
+}, "a05dfc2d-df7c-4c78-8a1b-a928fc816742").then((res: CreateAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -120,9 +120,9 @@ import { EntityType } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.accounting.createAttachment({
-  file: "saepe",
-  fileName: "quidem",
-}, "10faaa23-52c5-4955-907a-ff1a3a2fa946", EntityType.Expenses, "molestiae").then((res: CreateAttachmentResponse) => {
+  file: "impedit",
+  fileName: "cum",
+}, "73920592-9396-4fea-b596-eb10faaa2352", EntityType.JournalEntries, "enim").then((res: CreateAttachmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -158,77 +158,60 @@ const sdk = new Rutter();
 
 sdk.accounting.createBill({
   bill: {
-    accountId: "velit",
-    currencyCode: CreateBillCurrencyCode.Nzd,
-    documentNumber: "quia",
-    dueDate: "quis",
-    issueDate: "vitae",
+    accountId: "omnis",
+    currencyCode: CreateBillCurrencyCode.Idr,
+    documentNumber: "minima",
+    dueDate: "excepturi",
+    issueDate: "accusantium",
     lineItems: [
       {
-        accountId: "animi",
-        classId: "enim",
-        customerId: "odit",
-        departmentId: "quo",
-        description: "sequi",
-        discountAmount: 9495.72,
-        discountItemId: "ipsam",
+        accountId: "culpa",
+        classId: "doloribus",
+        customerId: "sapiente",
+        departmentId: "architecto",
+        description: "mollitia",
+        discountAmount: 2088.76,
+        discountItemId: "culpa",
         item: {
-          id: "ad019da1-ffe7-48f0-97b0-074f15471b5e",
-          quantity: 4142.63,
-          unitAmount: 9182.36,
+          id: "2fa94677-3925-41aa-92c3-f5ad019da1ff",
+          quantity: 8781.94,
+          unitAmount: 4686.51,
         },
-        locationId: "quae",
-        taxRateId: "ipsum",
-        totalAmount: 6924.72,
+        locationId: "praesentium",
+        taxRateId: "voluptatibus",
+        totalAmount: 557.14,
       },
       {
-        accountId: "molestias",
-        classId: "excepturi",
-        customerId: "pariatur",
-        departmentId: "modi",
-        description: "praesentium",
-        discountAmount: 5232.48,
-        discountItemId: "voluptates",
+        accountId: "omnis",
+        classId: "voluptate",
+        customerId: "cum",
+        departmentId: "perferendis",
+        description: "doloremque",
+        discountAmount: 4417.11,
+        discountItemId: "ut",
         item: {
-          id: "1e91e450-ad2a-4bd4-8269-802d502a94bb",
-          quantity: 2884.76,
-          unitAmount: 9621.89,
+          id: "f15471b5-e6e1-43b9-9d48-8e1e91e450ad",
+          quantity: 1317.97,
+          unitAmount: 6471.74,
         },
-        locationId: "eum",
-        taxRateId: "non",
-        totalAmount: 7561.07,
-      },
-      {
-        accountId: "sint",
-        classId: "aliquid",
-        customerId: "provident",
-        departmentId: "necessitatibus",
-        description: "sint",
-        discountAmount: 6389.21,
-        discountItemId: "dolor",
-        item: {
-          id: "efa77dfb-14cd-466a-a395-efb9ba88f3a6",
-          quantity: 4238.55,
-          unitAmount: 6188.09,
-        },
-        locationId: "omnis",
-        taxRateId: "molestiae",
-        totalAmount: 191.93,
+        locationId: "distinctio",
+        taxRateId: "quibusdam",
+        totalAmount: 2894.06,
       },
     ],
     linkedPurchaseOrders: [
       {
-        id: "4ba4469b-6e21-4419-9989-0afa563e2516",
+        id: "269802d5-02a9-44bb-8f63-c969e9a3efa7",
       },
       {
-        id: "fe4c8b71-1e5b-47fd-aed0-28921cddc692",
+        id: "7dfb14cd-66ae-4395-afb9-ba88f3a66997",
       },
     ],
-    memo: "ea",
-    subsidiaryId: "accusantium",
-    vendorId: "ab",
+    memo: "perferendis",
+    subsidiaryId: "nihil",
+    vendorId: "magnam",
   },
-}, "fb576b0d-5f0d-430c-9fbb-2587053202c7").then((res: CreateBillResponse) => {
+}, "ba4469b6-e214-4195-9890-afa563e2516f").then((res: CreateBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -263,33 +246,29 @@ const sdk = new Rutter();
 sdk.accounting.createBillCreditApplication({
   billCreditApplication: {
     additionalFields: {
-      accountId: "dolor",
+      accountId: "debitis",
     },
-    billCreditMemoId: "vero",
-    currencyCode: CreateBillCreditApplicationCurrencyCode.Hrk,
+    billCreditMemoId: "eius",
+    currencyCode: CreateBillCreditApplicationCurrencyCode.Try,
     linkedBills: [
+      {
+        allocatedAmount: 7038.89,
+        id: "711e5b7f-d2ed-4028-921c-ddc692601fb5",
+      },
+      {
+        allocatedAmount: 4535.43,
+        id: "6b0d5f0d-30c5-4fbb-a587-053202c73d5f",
+      },
       {
         allocatedAmount: 9280.82,
         id: "9b90c289-09b3-4fe4-9a8d-9cbf48633323",
       },
-      {
-        allocatedAmount: 9443.73,
-        id: "9b77f3a4-1006-474e-bf69-280d1ba77a89",
-      },
-      {
-        allocatedAmount: 8966.72,
-        id: "bf737ae4-203c-4e5e-aa95-d8a0d446ce2a",
-      },
-      {
-        allocatedAmount: 9527.92,
-        id: "7a73cf3b-e453-4f87-8b32-6b5a73429cdb",
-      },
     ],
-    memo: "dicta",
-    transactionDate: "laborum",
-    vendorId: "totam",
+    memo: "hic",
+    transactionDate: "excepturi",
+    vendorId: "cum",
   },
-}, "422bb679-d232-4271-9bf0-cbb1e31b8b90").then((res: CreateBillCreditApplicationResponse) => {
+}, "77f3a410-0674-4ebf-a928-0d1ba77a89eb").then((res: CreateBillCreditApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -323,24 +302,24 @@ const sdk = new Rutter();
 
 sdk.accounting.createBillCreditMemo({
   billCreditMemo: {
-    accountId: "delectus",
-    currencyCode: CreateBillCreditMemoCurrencyCode.Cuc,
-    issueDate: "dolore",
+    accountId: "asperiores",
+    currencyCode: CreateBillCreditMemoCurrencyCode.Lbp,
+    issueDate: "ipsum",
     lineItems: [
       {
-        accountId: "adipisci",
-        description: "dolorum",
-        totalAmount: 1002.94,
+        accountId: "id",
+        description: "saepe",
+        totalAmount: 2633.22,
       },
       {
-        accountId: "quae",
-        description: "aut",
-        totalAmount: 5556.49,
+        accountId: "aspernatur",
+        description: "perferendis",
+        totalAmount: 2292.19,
       },
     ],
-    vendorId: "itaque",
+    vendorId: "optio",
   },
-}, "0adcf4b9-2187-49fc-a953-f73ef7fbc7ab").then((res: CreateBillCreditMemoResponse) => {
+}, "e5e6a95d-8a0d-4446-8e2a-f7a73cf3be45").then((res: CreateBillCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -374,36 +353,26 @@ const sdk = new Rutter();
 
 sdk.accounting.createBillPayment({
   billPayment: {
-    accountId: "vero",
-    currencyCode: CreateBillPaymentCurrencyCode.Lvl,
-    documentNumber: "dolore",
+    accountId: "dolorem",
+    currencyCode: CreateBillPaymentCurrencyCode.Xpd,
+    documentNumber: "totam",
     linkedBills: [
       {
-        allocatedAmount: 8489.44,
-        allocatedDate: "sequi",
-        id: "9c0f5d2c-ff7c-470a-8562-6d436813f16d",
+        allocatedAmount: 256.62,
+        allocatedDate: "expedita",
+        id: "326b5a73-429c-4db1-a842-2bb679d23227",
       },
       {
-        allocatedAmount: 5692.11,
-        allocatedDate: "voluptatibus",
-        id: "5fce6c55-6146-4c3e-a50f-b008c42e141a",
-      },
-      {
-        allocatedAmount: 6720.48,
-        allocatedDate: "placeat",
-        id: "366c8dd6-b144-4290-b474-778a7bd466d2",
-      },
-      {
-        allocatedAmount: 5093.42,
-        allocatedDate: "quisquam",
-        id: "10ab3cdc-a425-4190-8e52-3c7e0bc7178e",
+        allocatedAmount: 1248.33,
+        allocatedDate: "ullam",
+        id: "bf0cbb1e-31b8-4b90-b344-3a1108e0adcf",
       },
     ],
-    memo: "aliquam",
-    transactionDate: "odio",
-    vendorId: "occaecati",
+    memo: "ut",
+    transactionDate: "facilis",
+    vendorId: "cupiditate",
   },
-}, "6f2a70c6-8828-42aa-8825-62f222e9817e").then((res: CreateBillPaymentResponse) => {
+}, "21879fce-953f-473e-b7fb-c7abd74dd39c").then((res: CreateBillPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -436,13 +405,13 @@ const sdk = new Rutter();
 
 sdk.accounting.createCustomer({
   customer: {
-    contactName: "accusamus",
-    customerName: "veritatis",
-    email: "Precious.Reilly9@yahoo.com",
-    phone: "1-564-753-7706 x72710",
-    subsidiaryId: "minus",
+    contactName: "aut",
+    customerName: "voluptatibus",
+    email: "Saige_Cormier98@yahoo.com",
+    phone: "840.723.4148 x214",
+    subsidiaryId: "laudantium",
   },
-}, "4f3789fd-871f-499d-92ef-d121aa6f1e67").then((res: CreateAccountingCustomerResponse) => {
+}, "13f16d9f-5fce-46c5-9614-6c3e250fb008").then((res: CreateAccountingCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -481,63 +450,33 @@ const sdk = new Rutter();
 
 sdk.accounting.createExpense({
   expense: {
-    accountId: "eius",
+    accountId: "impedit",
     additionalFields: {
-      placeOfSupply: CreateExpenseAdditionalFieldsPlaceOfSupply.Bahrain,
+      placeOfSupply: CreateExpenseAdditionalFieldsPlaceOfSupply.Fujairah,
       taxInclusive: false,
-      taxTreatment: CreateExpenseAdditionalFieldsTaxTreatment.DzVatRegistered,
+      taxTreatment: CreateExpenseAdditionalFieldsTaxTreatment.VatNotRegistered,
     },
-    currencyCode: CreateExpenseCurrencyCode.Sos,
-    currencyRate: 333.04,
+    currencyCode: CreateExpenseCurrencyCode.Vuv,
+    currencyRate: 795.22,
     expenseType: CreateExpenseExpenseType.Expense,
     lineItems: [
       {
-        accountId: "dicta",
-        classId: "ullam",
-        customerId: "reprehenderit",
-        departmentId: "ullam",
-        description: "nisi",
-        locationId: "aut",
-        taxRateId: "voluptatum",
-        totalAmount: 1852.32,
-      },
-      {
-        accountId: "quibusdam",
-        classId: "ex",
-        customerId: "deleniti",
-        departmentId: "itaque",
-        description: "dolorum",
-        locationId: "architecto",
-        taxRateId: "omnis",
-        totalAmount: 9453.02,
-      },
-      {
-        accountId: "quasi",
-        classId: "at",
-        customerId: "et",
-        departmentId: "voluptate",
-        description: "ipsa",
-        locationId: "minima",
-        taxRateId: "veritatis",
-        totalAmount: 2327.44,
-      },
-      {
-        accountId: "adipisci",
-        classId: "iste",
-        customerId: "temporibus",
-        departmentId: "accusantium",
-        description: "rem",
-        locationId: "aut",
-        taxRateId: "laudantium",
-        totalAmount: 4287.96,
+        accountId: "dolorum",
+        classId: "laborum",
+        customerId: "placeat",
+        departmentId: "velit",
+        description: "eum",
+        locationId: "autem",
+        taxRateId: "nobis",
+        totalAmount: 5573.69,
       },
     ],
-    memo: "mollitia",
-    subsidiaryId: "ab",
-    transactionDate: "corrupti",
-    vendorId: "non",
+    memo: "assumenda",
+    subsidiaryId: "nulla",
+    transactionDate: "voluptas",
+    vendorId: "libero",
   },
-}, "0394c260-71f9-43f5-b064-2dac7af515cc").then((res: CreateExpenseResponse) => {
+}, "14429074-7477-48a7-bd46-6d28c10ab3cd").then((res: CreateExpenseResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -571,44 +510,34 @@ const sdk = new Rutter();
 
 sdk.accounting.createInvoice({
   invoice: {
-    currencyCode: CreateInvoiceCurrencyCode.Gbp,
-    customerId: "ab",
-    dueDate: "adipisci",
-    issueDate: "fuga",
+    currencyCode: CreateInvoiceCurrencyCode.Thb,
+    customerId: "fuga",
+    dueDate: "eius",
+    issueDate: "eos",
     lineItems: [
       {
-        accountId: "suscipit",
-        description: "velit",
+        accountId: "ab",
+        description: "cupiditate",
         item: {
-          id: "aae8d678-64db-4b67-9fd5-e60b375ed4f6",
-          quantity: 9689.72,
-          unitAmount: 6971.42,
+          id: "04e523c7-e0bc-4717-8e47-96f2a70c6882",
+          quantity: 5361.78,
+          unitAmount: 1438.29,
         },
-        totalAmount: 9049.49,
+        totalAmount: 6813.93,
       },
       {
-        accountId: "necessitatibus",
-        description: "dolore",
+        accountId: "mollitia",
+        description: "incidunt",
         item: {
-          id: "1f33317f-e35b-460e-b1ea-426555ba3c28",
-          quantity: 4492.92,
-          unitAmount: 2962.42,
+          id: "82562f22-2e98-417e-a17c-be61e6b7b95b",
+          quantity: 7567.79,
+          unitAmount: 270.69,
         },
-        totalAmount: 3044.68,
-      },
-      {
-        accountId: "officiis",
-        description: "temporibus",
-        item: {
-          id: "53b88f3a-8d8f-45c0-b2f2-fb7b194a276b",
-          quantity: 1312.89,
-          unitAmount: 3783.26,
-        },
-        totalAmount: 6041.18,
+        totalAmount: 6360.61,
       },
     ],
   },
-}, "16fe1f08-f429-44e3-a98f-447f603e8b44").then((res: CreateInvoiceResponse) => {
+}, "b3c20c4f-3789-4fd8-b1f9-9dd2efd121aa").then((res: CreateInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -642,32 +571,24 @@ const sdk = new Rutter();
 
 sdk.accounting.createInvoiceCreditApplication({
   invoiceCreditApplication: {
-    accountId: "ipsam",
-    currencyCode: CreateInvoiceCreditApplicationCurrencyCode.Xaf,
-    customerId: "rem",
-    invoiceCreditMemoId: "sit",
+    accountId: "aliquid",
+    currencyCode: CreateInvoiceCreditApplicationCurrencyCode.Xfu,
+    customerId: "quae",
+    invoiceCreditMemoId: "earum",
     linkedInvoices: [
       {
-        allocatedAmount: 6256.37,
-        id: "55efd20e-457e-4185-8b6a-89fbe3a5aa8e",
+        allocatedAmount: 4473.78,
+        id: "4bdb04f1-5756-4082-968e-a19f1d170513",
       },
       {
-        allocatedAmount: 2726.83,
-        id: "824d0ab4-0750-488e-9186-2065e904f3b1",
-      },
-      {
-        allocatedAmount: 994.16,
-        id: "94b8abf6-03a7-49f9-9fe0-ab7da8a50ce1",
-      },
-      {
-        allocatedAmount: 5424.57,
-        id: "7f86bc17-3d68-49ee-a952-6f8d986e881e",
+        allocatedAmount: 2371.73,
+        id: "9d08086a-1840-4394-8260-71f93f5f0642",
       },
     ],
-    memo: "dolorum",
-    transactionDate: "repellendus",
+    memo: "repellendus",
+    transactionDate: "officia",
   },
-}, "4f0e1012-563f-494e-a9e9-73e922a57a15").then((res: CreateInvoiceCreditApplicationResponse) => {
+}, "c7af515c-c413-4aa6-baae-8d67864dbb67").then((res: CreateInvoiceCreditApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -700,24 +621,54 @@ const sdk = new Rutter();
 
 sdk.accounting.createInvoiceCreditMemo({
   invoiceCreditMemo: {
-    accountId: "quidem",
-    currencyCode: "eveniet",
-    customerId: "non",
-    issueDate: "vero",
+    accountId: "corporis",
+    currencyCode: "reiciendis",
+    customerId: "assumenda",
+    issueDate: "nemo",
     lineItems: [
       {
-        accountId: "iure",
-        description: "ipsa",
+        accountId: "aliquid",
+        description: "aperiam",
         item: {
-          id: "807e2b6e-3ab8-4845-b059-7a60ff2a54a3",
-          quantity: 632.07,
-          unitAmount: "recusandae",
+          id: "b375ed4f-6fbe-4e41-b333-17fe35b60eb1",
+          quantity: 8817.21,
+          unitAmount: "similique",
         },
-        totalAmount: "omnis",
+        totalAmount: "tempora",
+      },
+      {
+        accountId: "aspernatur",
+        description: "voluptas",
+        item: {
+          id: "555ba3c2-8744-4ed5-bb88-f3a8d8f5c0b2",
+          quantity: 9679.66,
+          unitAmount: "explicabo",
+        },
+        totalAmount: "asperiores",
+      },
+      {
+        accountId: "facilis",
+        description: "voluptate",
+        item: {
+          id: "b194a276-b269-416f-a1f0-8f4294e3698f",
+          quantity: 2716.53,
+          unitAmount: "tempora",
+        },
+        totalAmount: "voluptate",
+      },
+      {
+        accountId: "reiciendis",
+        description: "ex",
+        item: {
+          id: "03e8b445-e80c-4a55-afd2-0e457e1858b6",
+          quantity: 6805.15,
+          unitAmount: "voluptatum",
+        },
+        totalAmount: "error",
       },
     ],
   },
-}, "4764a3e8-65e7-4956-b925-1a5a9da660ff").then((res: CreateInvoiceCreditMemoResponse) => {
+}, "fbe3a5aa-8e48-424d-8ab4-075088e51862").then((res: CreateInvoiceCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -751,36 +702,36 @@ const sdk = new Rutter();
 
 sdk.accounting.createInvoicePayment({
   invoicePayment: {
-    accountId: "ullam",
-    currencyCode: CreateInvoicePaymentCurrencyCode.Kwd,
-    customerId: "nam",
+    accountId: "sit",
+    currencyCode: CreateInvoicePaymentCurrencyCode.Khr,
+    customerId: "nostrum",
     linkedInvoices: [
       {
-        allocatedAt: "officia",
-        amount: 6720.41,
-        id: "d4f9efc1-b451-42c1-8326-48dc2f615199",
+        allocatedAt: "error",
+        amount: 85.11,
+        id: "4f3b1194-b8ab-4f60-ba79-f9dfe0ab7da8",
       },
       {
-        allocatedAt: "earum",
-        amount: 7453.98,
-        id: "fd0e9fe6-c632-4ca3-aed0-117996312fde",
+        allocatedAt: "mollitia",
+        amount: 3339.65,
+        id: "0ce187f8-6bc1-473d-a89e-ee9526f8d986",
       },
       {
-        allocatedAt: "ipsa",
-        amount: 2711.13,
-        id: "771778ff-61d0-4174-b636-0a15db6a6606",
+        allocatedAt: "repudiandae",
+        amount: 5421.29,
+        id: "81ead4f0-e101-4256-bf94-e29e973e922a",
       },
       {
-        allocatedAt: "voluptas",
-        amount: 6145.28,
-        id: "a1adeaab-5851-4d6c-a45b-08b61891baa0",
+        allocatedAt: "quis",
+        amount: 4402.64,
+        id: "a15be3e0-6080-47e2-b6e3-ab8845f0597a",
       },
     ],
-    memo: "sapiente",
-    totalAmount: 8892.88,
-    txnDate: "architecto",
+    memo: "voluptas",
+    totalAmount: 51.89,
+    txnDate: "maiores",
   },
-}, "ade008e6-f8c5-4f35-8d8c-db5a34181430").then((res: CreateInvoicePaymentResponse) => {
+}, "f2a54a31-e947-464a-be86-5e7956f9251a").then((res: CreateInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -815,22 +766,22 @@ const sdk = new Rutter();
 sdk.accounting.createItem({
   item: {
     additionalFields: {
-      itemId: "architecto",
+      itemId: "nostrum",
     },
     billItem: {
-      accountId: "sit",
-      description: "modi",
-      unitPrice: "fugit",
+      accountId: "mollitia",
+      description: "provident",
+      unitPrice: "possimus",
     },
     invoiceItem: {
-      accountId: "ab",
-      description: "laudantium",
-      unitPrice: "quae",
+      accountId: "animi",
+      description: "ex",
+      unitPrice: "aliquid",
     },
-    name: "Janis Hills V",
-    type: CreateItemType.Unknown,
+    name: "Kristie Wyman",
+    type: CreateItemType.Discount,
   },
-}, "ce7e253b-6684-451c-ac6e-205e16deab3f").then((res: CreateItemResponse) => {
+}, "faad4f9e-fc1b-4451-ac10-32648dc2f615").then((res: CreateItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -864,33 +815,33 @@ const sdk = new Rutter();
 
 sdk.accounting.createJournalEntry({
   journalEntry: {
-    currencyCode: CreateJournalEntryCurrencyCode.Xbb,
-    currencyRate: 7592.83,
+    currencyCode: CreateJournalEntryCurrencyCode.Bov,
+    currencyRate: 5834.04,
     lineItems: [
       {
-        accountId: "nemo",
-        description: "voluptate",
-        taxRateId: "blanditiis",
-        totalAmount: 6423.52,
+        accountId: "earum",
+        description: "soluta",
+        taxRateId: "hic",
+        totalAmount: 8481.51,
       },
       {
-        accountId: "voluptas",
-        description: "numquam",
-        taxRateId: "nemo",
-        totalAmount: 5510.79,
+        accountId: "eaque",
+        description: "earum",
+        taxRateId: "perspiciatis",
+        totalAmount: 9834.27,
       },
       {
-        accountId: "eius",
-        description: "aspernatur",
-        taxRateId: "ducimus",
-        totalAmount: 2005.16,
+        accountId: "debitis",
+        description: "aliquid",
+        taxRateId: "porro",
+        totalAmount: 3803.35,
       },
     ],
-    memo: "fuga",
-    subsidiaryId: "laudantium",
-    transactionDate: "incidunt",
+    memo: "dolorem",
+    subsidiaryId: "fugit",
+    transactionDate: "cumque",
   },
-}, "18d16230-9fb0-4929-921a-efb9f58c4d86").then((res: CreateJournalEntryResponse) => {
+}, "a3aed011-7996-4312-bde0-4771778ff61d").then((res: CreateJournalEntryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -923,37 +874,30 @@ const sdk = new Rutter();
 
 sdk.accounting.createPurchaseOrder({
   purchaseOrder: {
-    currency: "itaque",
-    currencyRate: 4156.08,
+    currency: "doloremque",
+    currencyRate: 1173.15,
     lineItems: [
       {
-        description: "earum",
-        item: "modi",
-        quantity: 7221.84,
-        taxRateId: "vero",
-        unitAmount: 329.01,
+        description: "tempora",
+        item: "esse",
+        quantity: 4037.93,
+        taxRateId: "consectetur",
+        unitAmount: 3998.12,
       },
       {
-        description: "ipsam",
-        item: "vel",
-        quantity: 13.83,
-        taxRateId: "quasi",
-        unitAmount: 2476.85,
-      },
-      {
-        description: "maiores",
-        item: "enim",
-        quantity: 5752.13,
-        taxRateId: "nulla",
-        unitAmount: 6436.78,
+        description: "ipsa",
+        item: "laborum",
+        quantity: 1238.44,
+        taxRateId: "nostrum",
+        unitAmount: 8567.56,
       },
     ],
-    memo: "esse",
-    subsidiaryId: "nemo",
-    txnDate: "reprehenderit",
-    vendorId: "est",
+    memo: "expedita",
+    subsidiaryId: "aliquid",
+    txnDate: "officia",
+    vendorId: "suscipit",
   },
-}, "59ecfef6-6ef1-4caa-b383-c2beb477373c").then((res: CreatePurchaseOrderResponse) => {
+}, "60659a1a-deaa-4b58-91d6-c645b08b6189").then((res: CreatePurchaseOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -986,36 +930,54 @@ const sdk = new Rutter();
 
 sdk.accounting.createSalesOrder({
   salesOrder: {
-    classId: "deleniti",
-    currencyCode: "quibusdam",
-    customerId: "iure",
-    departmentId: "odit",
-    issueDate: "voluptatibus",
+    classId: "veritatis",
+    currencyCode: "rerum",
+    customerId: "est",
+    departmentId: "culpa",
+    issueDate: "voluptatem",
     lineItems: [
       {
-        description: "magnam",
+        description: "officiis",
         item: {
-          id: "d1db1f2c-4310-4661-a963-49e1cf9e06e3",
-          quantity: 6738.38,
-          unitAmount: 2503.98,
+          id: "1ade008e-6f8c-45f3-90d8-cdb5a3418143",
+          quantity: 86.89,
+          unitAmount: 1000.14,
         },
-        taxRateId: "dolor",
+        taxRateId: "sit",
       },
       {
-        description: "iusto",
+        description: "modi",
         item: {
-          id: "000ae6b6-bc9b-48f7-99ea-c55a9741d311",
-          quantity: 2124.34,
-          unitAmount: 3220.17,
+          id: "21813d52-08ec-4e7e-a53b-668451c6c6e2",
+          quantity: 289.52,
+          unitAmount: 3502.07,
         },
-        taxRateId: "qui",
+        taxRateId: "necessitatibus",
+      },
+      {
+        description: "quasi",
+        item: {
+          id: "6deab3fe-c957-48a6-8584-273a8418d162",
+          quantity: 2330.78,
+          unitAmount: 468.06,
+        },
+        taxRateId: "cupiditate",
+      },
+      {
+        description: "reiciendis",
+        item: {
+          id: "b0929921-aefb-49f5-8c4d-86e68e4be056",
+          quantity: 13.83,
+          unitAmount: 938.94,
+        },
+        taxRateId: "non",
       },
     ],
-    locationId: "iste",
-    memo: "ex",
-    subsidiaryId: "nemo",
+    locationId: "maiores",
+    memo: "enim",
+    subsidiaryId: "sint",
   },
-}, "bb8a7202-6114-435e-939d-bc2259b1abda").then((res: CreateSalesOrderResponse) => {
+}, "da757a59-ecfe-4f66-af1c-aa3383c2beb4").then((res: CreateSalesOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1051,53 +1013,52 @@ sdk.accounting.createVendor({
   vendor: {
     addresses: [
       {
-        address1: "placeat",
-        address2: "sit",
-        city: "Anastacioshire",
-        country: "Belarus",
-        postalCode: "52770",
-        region: "autem",
-        type: CreateVendorAddressesType.Shipping,
-      },
-      {
-        address1: "dolores",
-        address2: "assumenda",
-        city: "Lake Rebastad",
-        country: "Kuwait",
-        postalCode: "88754-4375",
-        region: "corporis",
+        address1: "voluptate",
+        address2: "sequi",
+        city: "Constancefort",
+        country: "Malaysia",
+        postalCode: "41943-8087",
+        region: "architecto",
         type: CreateVendorAddressesType.Unknown,
       },
       {
-        address1: "voluptatibus",
-        address2: "cum",
-        city: "Albany",
-        country: "Cape Verde",
-        postalCode: "69078-1845",
-        region: "odit",
-        type: CreateVendorAddressesType.Billing,
+        address1: "quia",
+        address2: "porro",
+        city: "East Arch",
+        country: "Antigua and Barbuda",
+        postalCode: "41854",
+        region: "velit",
+        type: CreateVendorAddressesType.Shipping,
       },
     ],
-    contactName: "corporis",
-    currencyCode: CreateVendorCurrencyCode.Nzd,
-    email: "Dawn.Walker@hotmail.com",
-    phone: "416.595.1222 x8647",
-    registrationNumber: "necessitatibus",
+    contactName: "perspiciatis",
+    currencyCode: CreateVendorCurrencyCode.Xcd,
+    email: "Olin_Wolf@gmail.com",
+    phone: "592-722-4000",
+    registrationNumber: "officia",
     subsidiaries: [
       {
-        id: "2b895c53-7c64-454e-bb0b-34896c3ca5ac",
+        id: "6b6bc9b8-f759-4eac-95a9-741d31135296",
         primary: false,
       },
       {
-        id: "fbe2fd57-0757-4792-9177-deac646ecb57",
+        id: "5bb8a720-2611-4435-a139-dbc2259b1abd",
+        primary: false,
+      },
+      {
+        id: "a8c070e1-084c-4b06-b2d1-ad879eeb9665",
+        primary: false,
+      },
+      {
+        id: "b85efbd0-2bae-40be-ad78-2259e3ea4b51",
         primary: false,
       },
     ],
-    taxNumber: "dolorem",
-    vendorName: "modi",
-    website: "ipsa",
+    taxNumber: "unde",
+    vendorName: "molestiae",
+    website: "delectus",
   },
-}, "9e3eb1e5-a2b1-42eb-87f1-16db99545fc9").then((res: CreateVendorResponse) => {
+}, "92443da7-ce52-4b89-9c53-7c6454efb0b3").then((res: CreateVendorResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1136,7 +1097,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.accounting.getAccount("5fa88970-e189-4dbb-b0fc-b33ea055b197", "eligendi", ForceFetch.False).then((res: GetAccountResponse) => {
+sdk.accounting.getAccount("4896c3ca-5acf-4be2-bd57-07577929177d", "itaque", ForceFetch.False).then((res: GetAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1169,7 +1130,7 @@ import { EntityType, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.accounting.getAttachment("44e2f52d-82d3-4513-bb6f-48b656bcdb35", EntityType.JournalEntries, "voluptatibus", ForceFetch.True).then((res: GetAttachmentResponse) => {
+sdk.accounting.getAttachment("c646ecb5-7340-49e3-ab1e-5a2b12eb07f1", EntityType.Bills, "laboriosam", ForceFetch.False).then((res: GetAttachmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1203,7 +1164,7 @@ import { BillCurrencyCode, BillStatus, ForceFetch, Platform } from "rutter-api/d
 
 const sdk = new Rutter();
 
-sdk.accounting.getBill("e4b27537-a8cd-49e7-b19c-177d525f77b1", "14eeb52f-f785-4fc3-b814-d4c98e0c2bb8", ForceFetch.False).then((res: GetBillResponse) => {
+sdk.accounting.getBill("b99545fc-95fa-4889-b0e1-89dbb30fcb33", "ea055b19-7cd4-44e2-b52d-82d3513bb6f4", ForceFetch.False).then((res: GetBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1236,7 +1197,7 @@ import { BillPaymentCurrencyCode, ForceFetch, Platform } from "rutter-api/dist/s
 
 const sdk = new Rutter();
 
-sdk.accounting.getBillPayment("eb75dad6-36c6-4005-83d8-bb31180f739a", "necessitatibus", ForceFetch.False).then((res: GetBillPaymentResponse) => {
+sdk.accounting.getBillPayment("b656bcdb-35ff-42e4-b275-37a8cd9e7319", "porro", ForceFetch.True).then((res: GetBillPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1269,7 +1230,7 @@ import { CompanyInfo20230314CurrencyCode, ForceFetch, Platform } from "rutter-ap
 
 const sdk = new Rutter();
 
-sdk.accounting.getCompanyInfo("e057eb80-9e28-4103-b1f3-981d4c700b60", ForceFetch.True).then((res: GetCompanyInfoResponse) => {
+sdk.accounting.getCompanyInfo("77d525f7-7b11-44ee-b52f-f785fc37814d", ForceFetch.True).then((res: GetCompanyInfoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1306,7 +1267,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.accounting.getCustomer("f3c93c73-b9da-43f2-8eda-7e23f2257411", "faf4b754-4e47-42e8-8285-7a5b40463a7d", ForceFetch.True).then((res: GetAccountingCustomerResponse) => {
+sdk.accounting.getCustomer("c98e0c2b-b89e-4b75-9ad6-36c600503d8b", "b31180f7-39ae-49e0-97eb-809e2810331f", ForceFetch.True).then((res: GetAccountingCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1339,7 +1300,7 @@ import { ExpenseCurrencyCode, ExpenseExpenseType, ForceFetch, Platform } from "r
 
 const sdk = new Rutter();
 
-sdk.accounting.getExpense("75f1400e-764a-4d73-b4ec-1b781b36a080", "88d100ef-ada2-400e-b042-2eb2164cf9ab", ForceFetch.False).then((res: GetExpenseResponse) => {
+sdk.accounting.getExpense("981d4c70-0b60-47f3-893c-73b9da3f2ced", "a7e23f22-5741-41fa-b4b7-544e472e8028", ForceFetch.True).then((res: GetExpenseResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1372,7 +1333,7 @@ import { ForceFetch, InvoiceLinkedPaymentsType, InvoiceStatus, Platform } from "
 
 const sdk = new Rutter();
 
-sdk.accounting.getInvoice("366c723f-fda9-4e06-bee4-825c1fc0e115", "c80bff91-8544-4ec4-adef-cce8f1977773", ForceFetch.False).then((res: GetInvoiceResponse) => {
+sdk.accounting.getInvoice("7a5b4046-3a7d-4575-b140-0e764ad7334e", "c1b781b3-6a08-4088-9100-efada200ef04", ForceFetch.True).then((res: GetInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1405,7 +1366,7 @@ import { ForceFetch, InvoiceCreditMemoStatus } from "rutter-api/dist/sdk/models/
 
 const sdk = new Rutter();
 
-sdk.accounting.getInvoiceCreditMemo("63562a7b-408f-405e-bd48-fdaf313a1f5f", "d94259c0-b36f-425e-a944-f3b756c11f6c", ForceFetch.True).then((res: GetInvoiceCreditMemoResponse) => {
+sdk.accounting.getInvoiceCreditMemo("2eb2164c-f9ab-4836-ac72-3ffda9e06bee", "4825c1fc-0e11-45c8-8bff-918544ec42de", ForceFetch.False).then((res: GetInvoiceCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1438,7 +1399,7 @@ import { ForceFetch, InvoicePaymentCurrencyCode } from "rutter-api/dist/sdk/mode
 
 const sdk = new Rutter();
 
-sdk.accounting.getInvoicePayment("7a512624-3835-4bbc-85a2-3a45cefc5fde", "10a0ce21-69e5-4100-99c6-dc5e34762799", ForceFetch.False).then((res: GetInvoicePaymentResponse) => {
+sdk.accounting.getInvoicePayment("cce8f197-7773-4e63-962a-7b408f05e3d4", "8fdaf313-a1f5-4fd9-8259-c0b36f25ea94", ForceFetch.True).then((res: GetInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1471,7 +1432,7 @@ import { AccountingItemStatus, AccountingItemType, ForceFetch, Platform } from "
 
 const sdk = new Rutter();
 
-sdk.accounting.getItem("fbbe6949-fb2b-4b4e-8ae6-c3d5db3adebd", "5daea4c5-06a8-4aa9-8c02-644cf5e9d9a4", ForceFetch.True).then((res: GetItemResponse) => {
+sdk.accounting.getItem("f3b756c1-1f6c-437a-9126-243835bbc05a", "23a45cef-c5fd-4e10-a0ce-2169e510019c", ForceFetch.True).then((res: GetItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1504,7 +1465,7 @@ import { ForceFetch, JournalEntryCurrencyCode, Platform } from "rutter-api/dist/
 
 const sdk = new Rutter();
 
-sdk.accounting.getJournalEntry("78adc1ac-600d-4ec0-81ac-802e2ec09ff8", "f0f816ff-3477-4c13-a902-c14125b0960a", ForceFetch.True).then((res: GetJournalEntryResponse) => {
+sdk.accounting.getJournalEntry("dc5e3476-2799-4bfb-be69-49fb2bb4ecae", "6c3d5db3-adeb-4d5d-aea4-c506a8aa94c0", ForceFetch.True).then((res: GetJournalEntryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1542,7 +1503,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.accounting.getPurchaseOrder("68151a47-2af9-423c-9949-f83f350cf876", "ffb901c6-ecbb-44e2-83cf-789ffafeda53", ForceFetch.False).then((res: GetPurchaseOrderResponse) => {
+sdk.accounting.getPurchaseOrder("644cf5e9-d9a4-4578-adc1-ac600dec001a", "c802e2ec-09ff-48f0-b816-ff3477c13e90", ForceFetch.True).then((res: GetPurchaseOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1575,7 +1536,7 @@ import { ForceFetch, Platform, SalesOrder20230314CurrencyCode, SalesOrder2023031
 
 const sdk = new Rutter();
 
-sdk.accounting.getSalesOrder("5ae6e0ac-184c-42b9-8247-c88373a40e19", "42f32e55-0557-456f-9d56-d0bd0af2dfe1", ForceFetch.True).then((res: GetSalesOrderResponse) => {
+sdk.accounting.getSalesOrder("c14125b0-960a-4668-951a-472af923c594", "9f83f350-cf87-46ff-b901-c6ecbb4e243c", ForceFetch.False).then((res: GetSalesOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1608,7 +1569,7 @@ import { ForceFetch, Platform, SubsidiaryStatus } from "rutter-api/dist/sdk/mode
 
 const sdk = new Rutter();
 
-sdk.accounting.getSubsidiary("db4f62cb-a3f8-4941-aebc-0b80a6924d3b", "2ecfcc8f-8950-410f-9dd3-d6fa1804e54c", ForceFetch.False).then((res: GetSubsidiaryResponse) => {
+sdk.accounting.getSubsidiary("789ffafe-da53-4e5a-a6e0-ac184c2b9c24", "7c88373a-40e1-4942-b32e-55055756f5d5", ForceFetch.True).then((res: GetSubsidiaryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1641,7 +1602,7 @@ import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.accounting.getTaxRate("2f168a36-3c88-473e-8843-80b1f6b8ca27", "5a60a04c-495c-4c69-9171-b51c1bdb1cf4", ForceFetch.False).then((res: GetTaxRateResponse) => {
+sdk.accounting.getTaxRate("d0bd0af2-dfe1-43db-8f62-cba3f8941aeb", "c0b80a69-24d3-4b2e-8fcc-8f895010f5dd", ForceFetch.True).then((res: GetTaxRateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1674,7 +1635,7 @@ import { ForceFetch, Platform, VendorAddressesType, VendorCurrencyCode, VendorSt
 
 const sdk = new Rutter();
 
-sdk.accounting.getVendor("888ebdfc-4ccc-4a99-bc7f-c0b2dce10873", "e42b006d-6788-478b-a858-1a58208c54fe", ForceFetch.False).then((res: GetVendorResponse) => {
+sdk.accounting.getVendor("d6fa1804-e54c-482f-968a-363c8873e484", "380b1f6b-8ca2-475a-a0a0-4c495cc69917", ForceFetch.True).then((res: GetVendorResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1716,13 +1677,13 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listAccounts({
-  accessToken: "a9c95f2e-ac55-465d-b07c-fee81206e281",
-  cursor: "nesciunt",
+  accessToken: "b51c1bdb-1cf4-4b88-8ebd-fc4ccca99bc7",
+  cursor: "hic",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.False,
-  limit: 673653,
-  updatedAtMax: 303421,
-  updatedAtMin: 644223,
+  limit: 36691,
+  updatedAtMax: 743531,
+  updatedAtMin: 147400,
 }).then((res: ListAccountsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1755,14 +1716,14 @@ import { EntityType, Expand, ForceFetch } from "rutter-api/dist/sdk/models/share
 const sdk = new Rutter();
 
 sdk.accounting.listAttachments({
-  accessToken: "41c480d3-f213-42af-8310-2d514f4cc6f1",
-  cursor: "deleniti",
-  entityType: EntityType.Invoices,
+  accessToken: "dce10873-e42b-4006-9678-878ba8581a58",
+  cursor: "magni",
+  entityType: EntityType.Bills,
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.False,
-  limit: 569834,
-  updatedAtMax: 396610,
-  updatedAtMin: 151385,
+  limit: 811259,
+  updatedAtMax: 318028,
+  updatedAtMin: 286453,
 }).then((res: ListAttachmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1794,7 +1755,7 @@ import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.accounting.listBalanceSheets("1a6a4f77-a87e-4e3e-8be7-52c65b34418e", "dolor", ForceFetch.False, "libero").then((res: ListBalanceSheetsResponse) => {
+sdk.accounting.listBalanceSheets("fefa9c95-f2ea-4c55-a5d3-07cfee81206e", "sed", ForceFetch.False, "sunt").then((res: ListBalanceSheetsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1829,13 +1790,13 @@ import { BillCreditMemoCurrencyCode, BillCreditMemoStatus, Expand, ForceFetch, P
 const sdk = new Rutter();
 
 sdk.accounting.listBillCreditMemos({
-  accessToken: "91c8d975-e0e8-4419-98f8-4f144f3e07ed",
-  cursor: "quisquam",
+  accessToken: "3fa4a41c-480d-43f2-932a-f03102d514f4",
+  cursor: "optio",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.False,
-  limit: 302878,
-  updatedAtMax: 677895,
-  updatedAtMin: 644827,
+  limit: 404422,
+  updatedAtMax: 998023,
+  updatedAtMin: 65118,
 }).then((res: ListBillCreditMemosResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1868,13 +1829,13 @@ import { BillPaymentCurrencyCode, Expand, ForceFetch, Platform } from "rutter-ap
 const sdk = new Rutter();
 
 sdk.accounting.listBillPayments({
-  accessToken: "5f3cabd9-05a9-472e-8567-28227b2d3094",
-  cursor: "esse",
+  accessToken: "8bf9621a-6a4f-477a-87ee-3e4be752c65b",
+  cursor: "ipsum",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 718119,
-  updatedAtMax: 956545,
-  updatedAtMin: 463050,
+  limit: 308819,
+  updatedAtMax: 103988,
+  updatedAtMin: 506966,
 }).then((res: ListBillPaymentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1907,13 +1868,13 @@ import { BillCurrencyCode, BillStatus, Expand, ForceFetch, Platform } from "rutt
 const sdk = new Rutter();
 
 sdk.accounting.listBills({
-  accessToken: "a4fa87cf-535a-46fa-a54e-bf60c321f023",
-  cursor: "rerum",
+  accessToken: "e3bb91c8-d975-4e0e-8419-d8f84f144f3e",
+  cursor: "consequatur",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 345514,
-  updatedAtMax: 836991,
-  updatedAtMin: 186937,
+  limit: 891302,
+  updatedAtMax: 817454,
+  updatedAtMin: 789016,
 }).then((res: ListBillsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1945,7 +1906,7 @@ import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.accounting.listCashFlowStatements("367fe1a0-cc8d-4f79-b0a3-96d90c364b7c", "sunt", ForceFetch.True, "nulla").then((res: ListCashFlowStatementsResponse) => {
+sdk.accounting.listCashFlowStatements("c4aa5f3c-abd9-405a-972e-056728227b2d", "nesciunt", ForceFetch.True, "sint").then((res: ListCashFlowStatementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1980,13 +1941,13 @@ import { ClassStatus, Expand, ForceFetch } from "rutter-api/dist/sdk/models/shar
 const sdk = new Rutter();
 
 sdk.accounting.listClasses({
-  accessToken: "fbace188-b1c4-4ee2-88c6-ce611feeb1c7",
-  cursor: "minus",
+  accessToken: "470bf7a4-fa87-4cf5-b5a6-fae54ebf60c3",
+  cursor: "sunt",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.False,
-  limit: 823341,
-  updatedAtMax: 738152,
-  updatedAtMin: 382342,
+  forceFetch: ForceFetch.True,
+  limit: 973096,
+  updatedAtMax: 42364,
+  updatedAtMin: 149498,
 }).then((res: ListClassesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2019,13 +1980,13 @@ import { CurrencyCurrencyCode, Expand, ForceFetch, Platform } from "rutter-api/d
 const sdk = new Rutter();
 
 sdk.accounting.listCurrencies({
-  accessToken: "eec74378-ba25-4317-b47d-c915ad2caf5d",
-  cursor: "quibusdam",
+  accessToken: "3b75d236-7fe1-4a0c-88df-79f0a396d90c",
+  cursor: "sequi",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 456371,
-  updatedAtMax: 127499,
-  updatedAtMin: 233708,
+  limit: 287141,
+  updatedAtMax: 710059,
+  updatedAtMin: 446737,
 }).then((res: ListCurrenciesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2064,13 +2025,13 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listCustomers({
-  accessToken: "dc0f5ae2-f3a6-4b70-8878-756143f5a6c9",
-  cursor: "laudantium",
+  accessToken: "c15dfbac-e188-4b1c-8ee2-c8c6ce611fee",
+  cursor: "quidem",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.False,
-  limit: 366147,
-  updatedAtMax: 317632,
-  updatedAtMin: 371213,
+  forceFetch: ForceFetch.True,
+  limit: 778242,
+  updatedAtMax: 490966,
+  updatedAtMin: 791615,
 }).then((res: ListAccountingCustomersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2103,13 +2064,13 @@ import { DepartmentStatus, Expand, ForceFetch } from "rutter-api/dist/sdk/models
 const sdk = new Rutter();
 
 sdk.accounting.listDepartments({
-  accessToken: "54080d40-bcac-4c6c-bd6b-5f3ec909304f",
-  cursor: "omnis",
+  accessToken: "bdb6eec7-4378-4ba2-9317-747dc915ad2c",
+  cursor: "dolorum",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 425817,
-  updatedAtMax: 740347,
-  updatedAtMin: 663062,
+  forceFetch: ForceFetch.False,
+  limit: 341983,
+  updatedAtMax: 847308,
+  updatedAtMin: 845086,
 }).then((res: ListDepartmentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2149,14 +2110,14 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listExpenses({
-  accessToken: "d2553819-b474-4b0e-920e-56248fff639a",
-  cursor: "provident",
+  accessToken: "6723dc0f-5ae2-4f3a-ab70-0878756143f5",
+  cursor: "est",
   expand: Expand.PlatformData,
   expenseType: ExpenseType.Expense,
-  forceFetch: ForceFetch.True,
-  limit: 650914,
-  updatedAtMax: 721138,
-  updatedAtMin: 827314,
+  forceFetch: ForceFetch.False,
+  limit: 590927,
+  updatedAtMax: 515595,
+  updatedAtMin: 722392,
 }).then((res: ListExpensesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2188,7 +2149,7 @@ import { ForceFetch, IncomeStatementAccountingStandard } from "rutter-api/dist/s
 
 const sdk = new Rutter();
 
-sdk.accounting.listIncomeStatements("cab62676-696e-41ec-8022-1b335d89acb3", "debitis", ForceFetch.False, "asperiores").then((res: ListIncomeStatementsResponse) => {
+sdk.accounting.listIncomeStatements("55554080-d40b-4cac-86cb-d6b5f3ec9093", "accusantium", ForceFetch.True, "repellat").then((res: ListIncomeStatementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2223,13 +2184,13 @@ import { Expand, ForceFetch, InvoiceCreditMemoStatus } from "rutter-api/dist/sdk
 const sdk = new Rutter();
 
 sdk.accounting.listInvoiceCreditMemos({
-  accessToken: "da8d0c54-9ef0-4300-8978-a61fa1cf2068",
-  cursor: "totam",
+  accessToken: "926bad25-5381-49b4-b4b0-ed20e56248ff",
+  cursor: "asperiores",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.False,
-  limit: 451807,
-  updatedAtMax: 461754,
-  updatedAtMin: 799830,
+  forceFetch: ForceFetch.True,
+  limit: 198892,
+  updatedAtMax: 585628,
+  updatedAtMin: 656839,
 }).then((res: ListInvoiceCreditMemosResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2262,13 +2223,13 @@ import { Expand, ForceFetch, InvoicePaymentCurrencyCode } from "rutter-api/dist/
 const sdk = new Rutter();
 
 sdk.accounting.listInvoicePayments({
-  accessToken: "1ffc71dc-a163-4f2a-bc80-a97ff334cddf",
-  cursor: "molestias",
+  accessToken: "910abdca-b626-4766-96e1-ec00221b335d",
+  cursor: "praesentium",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 456222,
-  updatedAtMax: 675755,
-  updatedAtMin: 596185,
+  forceFetch: ForceFetch.False,
+  limit: 629461,
+  updatedAtMax: 753261,
+  updatedAtMin: 732142,
 }).then((res: ListInvoicePaymentsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2301,13 +2262,13 @@ import { Expand, ForceFetch, InvoiceLinkedPaymentsType, InvoiceStatus, Platform 
 const sdk = new Rutter();
 
 sdk.accounting.listInvoices({
-  accessToken: "e61876c6-ab21-4d29-9fc9-4d6fecd79939",
-  cursor: "aperiam",
+  accessToken: "3ecfda8d-0c54-49ef-8300-4978a61fa1cf",
+  cursor: "qui",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 431258,
-  updatedAtMax: 385291,
-  updatedAtMin: 672627,
+  limit: 415125,
+  updatedAtMax: 538944,
+  updatedAtMin: 519985,
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2340,13 +2301,13 @@ import { AccountingItemStatus, AccountingItemType, Expand, ForceFetch } from "ru
 const sdk = new Rutter();
 
 sdk.accounting.listItems({
-  accessToken: "6d2d0003-5533-48ce-8086-fa21e9152cb3",
-  cursor: "beatae",
+  accessToken: "f77c1ffc-71dc-4a16-bf2a-3c80a97ff334",
+  cursor: "optio",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 565845,
-  updatedAtMax: 107042,
-  updatedAtMin: 420233,
+  forceFetch: ForceFetch.False,
+  limit: 870183,
+  updatedAtMax: 945320,
+  updatedAtMin: 562066,
 }).then((res: ListItemsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2379,13 +2340,13 @@ import { Expand, ForceFetch, JournalEntryCurrencyCode, Platform } from "rutter-a
 const sdk = new Rutter();
 
 sdk.accounting.listJournalEntries({
-  accessToken: "7b8e3c8d-b034-408d-ad36-4ffd455906d1",
-  cursor: "quia",
+  accessToken: "57a9e618-76c6-4ab2-9d29-dfc94d6fecd7",
+  cursor: "iste",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 204144,
-  updatedAtMax: 843659,
-  updatedAtMin: 255264,
+  forceFetch: ForceFetch.False,
+  limit: 221490,
+  updatedAtMax: 573247,
+  updatedAtMin: 44252,
 }).then((res: ListJournalEntriesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2418,13 +2379,13 @@ import { Expand, ForceFetch, LocationStatus } from "rutter-api/dist/sdk/models/s
 const sdk = new Rutter();
 
 sdk.accounting.listLocations({
-  accessToken: "8e935c2c-9e81-4f30-be3e-43202d721657",
-  cursor: "vel",
+  accessToken: "066a6d2d-0003-4553-b8ce-c086fa21e915",
+  cursor: "consequuntur",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 24548,
-  updatedAtMax: 426527,
-  updatedAtMin: 388333,
+  forceFetch: ForceFetch.False,
+  limit: 696219,
+  updatedAtMax: 247615,
+  updatedAtMin: 109569,
 }).then((res: ListLocationsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2463,13 +2424,13 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listPurchaseOrders({
-  accessToken: "41870d9d-21f9-4ad0-b0c4-ecc11a083642",
-  cursor: "natus",
+  accessToken: "19167b8e-3c8d-4b03-808d-6d364ffd4559",
+  cursor: "alias",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 384273,
-  updatedAtMax: 512370,
-  updatedAtMin: 703407,
+  limit: 845078,
+  updatedAtMax: 116867,
+  updatedAtMin: 154840,
 }).then((res: ListPurchaseOrdersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2501,7 +2462,7 @@ import { CompanyInfo20230207BaseCurrencyCode, Filter, ForceFetch } from "rutter-
 
 const sdk = new Rutter();
 
-sdk.accounting.listReports("8502a55e-7f73-4bc8-85e3-20a319f4badf", Filter.Flat, ForceFetch.True).then((res: ListReportsResponse) => {
+sdk.accounting.listReports("63d48e93-5c2c-49e8-9f30-be3e43202d72", Filter.Tree, ForceFetch.True).then((res: ListReportsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2541,13 +2502,13 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listSalesOrders({
-  accessToken: "7c9a867b-c424-4266-a581-6ddca8ef51fc",
-  cursor: "expedita",
+  accessToken: "57650664-1870-4d9d-a1f9-ad030c4ecc11",
+  cursor: "id",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 768244,
-  updatedAtMax: 368599,
-  updatedAtMin: 578081,
+  limit: 551576,
+  updatedAtMax: 191724,
+  updatedAtMin: 436532,
 }).then((res: ListSalesOrdersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2580,13 +2541,13 @@ import { Expand, ForceFetch, Platform, SubsidiaryStatus } from "rutter-api/dist/
 const sdk = new Rutter();
 
 sdk.accounting.listSubsidiaries({
-  accessToken: "3ec12cda-ad0e-4c7a-bedb-d80df448a47f",
-  cursor: "iste",
+  accessToken: "429068b8-502a-455e-bf73-bc845e320a31",
+  cursor: "error",
   expand: Expand.PlatformData,
-  forceFetch: ForceFetch.True,
-  limit: 581019,
-  updatedAtMax: 15738,
-  updatedAtMin: 771289,
+  forceFetch: ForceFetch.False,
+  limit: 258140,
+  updatedAtMax: 700634,
+  updatedAtMin: 678695,
 }).then((res: ListSubsidiariesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2619,13 +2580,13 @@ import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.accounting.listTaxRates({
-  accessToken: "58880983-dabf-49ef-bffd-d9f7f079af4d",
-  cursor: "neque",
+  accessToken: "df947c9a-867b-4c42-8266-65816ddca8ef",
+  cursor: "nemo",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 448407,
-  updatedAtMax: 152047,
-  updatedAtMin: 250621,
+  limit: 984669,
+  updatedAtMax: 766670,
+  updatedAtMin: 711310,
 }).then((res: ListTaxRatesResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2665,13 +2626,13 @@ import {
 const sdk = new Rutter();
 
 sdk.accounting.listVendors({
-  accessToken: "cdb0f4d2-8118-47d5-a844-eded85a9065e",
-  cursor: "laboriosam",
+  accessToken: "4c593ec1-2cda-4ad0-ac7a-fedbd80df448",
+  cursor: "similique",
   expand: Expand.PlatformData,
   forceFetch: ForceFetch.True,
-  limit: 505473,
-  updatedAtMax: 697729,
-  updatedAtMin: 848649,
+  limit: 456599,
+  updatedAtMax: 968205,
+  updatedAtMin: 611792,
 }).then((res: ListVendorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -2704,13 +2665,13 @@ const sdk = new Rutter();
 
 sdk.accounting.updateBill({
   bill: {
-    documentNumber: "reiciendis",
-    dueDate: "placeat",
-    issueDate: "dolores",
-    memo: "consequatur",
-    vendorId: "nesciunt",
+    documentNumber: "amet",
+    dueDate: "occaecati",
+    issueDate: "aut",
+    memo: "impedit",
+    vendorId: "minima",
   },
-}, "2b6c8799-23b7-4e13-984f-7ae12c6891f8", "2ce11571-7230-4537-bdcf-a89df975e356").then((res: UpdateBillResponse) => {
+}, "8880983d-abf9-4ef3-bfdd-9f7f079af4d3", "5724cdb0-f4d2-4811-87d5-6844eded85a9").then((res: UpdateBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2745,44 +2706,34 @@ const sdk = new Rutter();
 
 sdk.accounting.updateInvoice({
   invoice: {
-    currencyCode: UpdateInvoiceCurrencyCode.Khr,
-    customerId: "rem",
-    dueDate: "aliquid",
-    issueDate: "aperiam",
+    currencyCode: UpdateInvoiceCurrencyCode.Bam,
+    customerId: "eum",
+    dueDate: "nostrum",
+    issueDate: "eveniet",
     lineItems: [
       {
-        accountId: "fugit",
-        description: "itaque",
+        accountId: "ratione",
+        description: "blanditiis",
         item: {
-          id: "9c3ddc5f-111d-4ea1-826d-541a4d190feb",
-          quantity: 1568.43,
-          unitAmount: 1127.51,
+          id: "bdfc2032-b6c8-4799-a3b7-e13584f7ae12",
+          quantity: 7733.55,
+          unitAmount: 4013.88,
         },
-        totalAmount: 4878.39,
+        totalAmount: 5078.74,
       },
       {
-        accountId: "quas",
-        description: "ipsa",
+        accountId: "natus",
+        description: "vitae",
         item: {
-          id: "bccc0dbb-ddb4-4847-88fb-4e391e6bc158",
-          quantity: 7803.7,
-          unitAmount: 2864.86,
+          id: "f82ce115-7172-4305-b77d-cfa89df975e3",
+          quantity: 3366.4,
+          unitAmount: 4131.35,
         },
-        totalAmount: 7738.89,
-      },
-      {
-        accountId: "ut",
-        description: "earum",
-        item: {
-          id: "54599ea3-4226-40e9-b200-ce78a1bd8fb7",
-          quantity: 6353.14,
-          unitAmount: 424.89,
-        },
-        totalAmount: 6813.36,
+        totalAmount: 4264.81,
       },
     ],
   },
-}, "116ce723-d409-47fa-b0e9-af725b291220", "30d83f5a-eb77-499d-a2e8-c1f8493825fd").then((res: UpdateInvoiceResponse) => {
+}, "86092e9c-3ddc-45f1-91de-a1026d541a4d", "190feb21-780b-4ccc-8dbb-ddb484708fb4").then((res: UpdateInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2816,20 +2767,30 @@ const sdk = new Rutter();
 
 sdk.accounting.updateInvoicePayment({
   invoicePayment: {
-    accountId: "porro",
-    customerId: "quaerat",
+    accountId: "repudiandae",
+    customerId: "amet",
     linkedInvoices: [
       {
-        allocatedAt: "cumque",
-        amount: 5526.87,
-        id: "76c2c2df-b4cf-4c1c-b623-0f841fb1bd23",
+        allocatedAt: "ab",
+        amount: 8878.35,
+        id: "6bc158c4-c4e5-4459-9ea3-42260e9b200c",
+      },
+      {
+        allocatedAt: "recusandae",
+        amount: 4518.31,
+        id: "8a1bd8fb-7a0a-4116-8e72-3d4097fa30e9",
+      },
+      {
+        allocatedAt: "deserunt",
+        amount: 9444.05,
+        id: "725b2912-2030-4d83-b5ae-b7799d22e8c1",
       },
     ],
-    memo: "hic",
-    totalAmount: 8309.48,
-    txnDate: "nam",
+    memo: "repellat",
+    totalAmount: 5427.83,
+    txnDate: "magnam",
   },
-}, "14db6be5-a685-4998-a22a-e20da16fc2b2", "71a289c5-7e85-44e9-8439-d22246569462").then((res: UpdateInvoicePaymentResponse) => {
+}, "93825fdc-42c8-476c-ac2d-fb4cfc1c7623", "0f841fb1-bd23-4fdb-94db-6be5a685998e").then((res: UpdateInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

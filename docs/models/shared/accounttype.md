@@ -1,4 +1,4 @@
-# CreateAccountAccountType
+# AccountType
 
 The account type of the account.
 

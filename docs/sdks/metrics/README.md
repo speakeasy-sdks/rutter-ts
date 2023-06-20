@@ -16,7 +16,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.metrics.getAccountingMetric("ba998678-fa3f-4696-991a-f388ce036144", "modi", ForceFetch.False).then((res: GetAccountingMetricResponse) => {
+sdk.metrics.getAccountingMetric("640d6a18-31c8-47ad-b596-fdf1ad837ae8", "voluptatem", ForceFetch.False).then((res: GetAccountingMetricResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -49,7 +49,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.metrics.getCommerceMetric("c7977a0e-f2f5-4360-a8ef-eef934152ed7", "itaque", ForceFetch.True).then((res: GetCommerceMetricResponse) => {
+sdk.metrics.getCommerceMetric("1c19c95b-a998-4678-ba3f-696991af388c", "repudiandae", ForceFetch.True).then((res: GetCommerceMetricResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

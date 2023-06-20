@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The account type of the account.
  */
-export enum CreateAccountAccountType {
+export enum AccountType {
     AccountsPayable = "accounts_payable",
     AccountsReceivable = "accounts_receivable",
     Bank = "bank",
@@ -44,7 +44,7 @@ export class CreateAccountAdditionalFields extends SpeakeasyBase {
 /**
  * The [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) currency code of the account.
  */
-export enum CreateAccountCurrencyCode {
+export enum CurrencyCode {
     Aed = "AED",
     Afn = "AFN",
     All = "ALL",
@@ -231,7 +231,7 @@ export class CreateAccount extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "account_type" })
-    accountType: CreateAccountAccountType;
+    accountType: AccountType;
 
     /**
      * Additional fields required only for a narrow set of use cases.
@@ -246,7 +246,7 @@ export class CreateAccount extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "currency_code" })
-    currencyCode: CreateAccountCurrencyCode;
+    currencyCode: CurrencyCode;
 
     /**
      * The business facing name of the account.

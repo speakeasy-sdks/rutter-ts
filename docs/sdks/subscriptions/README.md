@@ -16,12 +16,12 @@ import { ForceFetch, Platform, SubscriptionStatus } from "rutter-api/dist/sdk/mo
 const sdk = new Rutter();
 
 sdk.subscriptions.listSubscriptions({
-  accessToken: "3b1dd3bb-ce24-47b7-a84e-ff50126d71cf",
-  cursor: "tenetur",
-  forceFetch: ForceFetch.False,
-  limit: 817057,
-  updatedAtMax: 11392,
-  updatedAtMin: 930942,
+  accessToken: "2eabd617-c3b0-4d51-a44b-f01bad8706d4",
+  cursor: "ea",
+  forceFetch: ForceFetch.True,
+  limit: 514234,
+  updatedAtMax: 186303,
+  updatedAtMin: 725369,
 }).then((res: ListSubscriptionsResponse) => {
   if (res.statusCode == 200) {
     // handle response

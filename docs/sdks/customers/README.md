@@ -18,7 +18,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.customers.getCustomer("533994d7-8de3-4b6e-9389-f5abb7f66255", "0a28382a-c483-4afd-a315-bba650164e06", ForceFetch.False).then((res: GetCustomerResponse) => {
+sdk.customers.getCustomer("12d02529-270b-48d5-b22d-d895b8bcf24d", "b9596933-52f7-4453-b994-d78de3b6e938", ForceFetch.False).then((res: GetCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,7 +51,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.customers.getCustomerGroup("5bf6ae59-1bc8-4bde-b361-2b63c205fda8", "40774a68-a9a3-45d0-86b6-f66fef020e9f", ForceFetch.True).then((res: GetCustomerGroupResponse) => {
+sdk.customers.getCustomerGroup("f5abb7f6-6255-40a2-8382-ac483afd2315", "bba65016-4e06-4f5b-b6ae-591bc8bdef36", ForceFetch.True).then((res: GetCustomerGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,12 +85,12 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.customers.listCustomerGroups({
-  accessToken: "43b4257b-992c-48db-9a6a-61efa2198258",
-  cursor: "doloribus",
-  forceFetch: ForceFetch.False,
-  limit: 13655,
-  updatedAtMax: 630286,
-  updatedAtMin: 612181,
+  accessToken: "2b63c205-fda8-4407-b4a6-8a9a35d086b6",
+  cursor: "maiores",
+  forceFetch: ForceFetch.True,
+  limit: 428199,
+  updatedAtMax: 965726,
+  updatedAtMin: 881067,
 }).then((res: ListCustomerGroupsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -123,14 +123,14 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.customers.listCustomers({
-  accessToken: "eba47f7d-3ef0-4496-80d6-a1831c87adf5",
-  cursor: "cupiditate",
-  email: "Vivian.Sipes65@yahoo.com",
-  forceFetch: ForceFetch.False,
-  limit: 505908,
-  phone: "568.607.1715",
-  updatedAtMax: 756936,
-  updatedAtMin: 580689,
+  accessToken: "f020e9f4-43b4-4257-b992-c8dbda6a61ef",
+  cursor: "id",
+  email: "Arlo.Moore@gmail.com",
+  forceFetch: ForceFetch.True,
+  limit: 539703,
+  phone: "806.697.6249 x48299",
+  updatedAtMax: 19232,
+  updatedAtMin: 310926,
 }).then((res: ListCustomersResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -20,11 +20,13 @@ import { AmazonCredentialsAmazonSellerRegion, CreateConnectionPlatforms } from "
 const sdk = new Rutter();
 
 sdk.connections.createConnection({
-  basicPassword: "consequuntur",
-  basicUsername: "voluptas",
-  platform: CreateConnectionPlatforms.Shopify,
-  scope: "excepturi",
-  storeUrl: "corrupti",
+  country: "Bermuda",
+  oauthAccessToken: "maiores",
+  oauthClientId: "voluptatem",
+  oauthClientSecret: "aliquid",
+  oauthRefreshToken: "laudantium",
+  platform: CreateConnectionPlatforms.Fnac,
+  scope: "corrupti",
 }).then((res: CreateConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,7 +57,7 @@ import { DeleteConnectionResponse } from "rutter-api/dist/sdk/models/operations"
 
 const sdk = new Rutter();
 
-sdk.connections.deleteConnection("est").then((res: DeleteConnectionResponse) => {
+sdk.connections.deleteConnection("quae").then((res: DeleteConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -86,7 +88,7 @@ import { Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.connections.getAccessToken("0dc76632-4ccb-406c-8ca1-2d02529270b8").then((res: GetAccessTokenResponse) => {
+sdk.connections.getAccessToken("d6bb33cf-aa34-48c3-9bf4-07ee4fcf0c42").then((res: GetAccessTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,7 +135,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.connections.getStatus("d5722dd8-95b8-4bcf-a4db-959693352f74").then((res: GetStatusResponse) => {
+sdk.connections.getStatus("b78f1562-6398-4a0d-8766-324ccb06c8ca").then((res: GetStatusResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

@@ -15,7 +15,7 @@ import { Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared"
 
 const sdk = new Rutter();
 
-sdk.store.getStore("cb860f8c-d580-4ba7-b810-e4fe4447297c", Expand.PlatformData, ForceFetch.False).then((res: GetStoreResponse) => {
+sdk.store.getStore("ee224460-443b-4c15-8188-c2f56e85da78", Expand.PlatformData, ForceFetch.True).then((res: GetStoreResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
