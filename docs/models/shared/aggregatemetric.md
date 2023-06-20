@@ -1,0 +1,11 @@
+# AggregateMetric
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `currency`                                                                                | *string*                                                                                  | :heavy_check_mark:                                                                        | If applicable, the currency used for the value returned.                                  |
+| `endDate`                                                                                 | *string*                                                                                  | :heavy_check_mark:                                                                        | The date at which we stop aggregating activity (revenue, expenses, etc).                  |
+| `startDate`                                                                               | *string*                                                                                  | :heavy_check_mark:                                                                        | The starting date from which we start aggregating activity (revenue, expenses, etc).      |
+| `value`                                                                                   | *string*                                                                                  | :heavy_check_mark:                                                                        | The value of the requested metric for the time range described by the start and end date. |

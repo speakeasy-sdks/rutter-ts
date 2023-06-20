@@ -1,0 +1,10 @@
+# OrderRefundsLineItems
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `amount`                                                                                   | *string*                                                                                   | :heavy_minus_sign:                                                                         | The total cost of the variants refunded.                                                   |
+| `lineItemId`                                                                               | *string*                                                                                   | :heavy_check_mark:                                                                         | The id of the line item refunded.                                                          |
+| `quantity`                                                                                 | *number*                                                                                   | :heavy_check_mark:                                                                         | The quantity of the linked [Variant](/rest/version/variants) refunded with this line item. |

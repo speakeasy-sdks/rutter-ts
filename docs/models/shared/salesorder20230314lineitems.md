@@ -1,0 +1,11 @@
+# SalesOrder20230314LineItems
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `description`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | The description of the sales order line item.                                                 |
+| `item`                                                                                        | [SalesOrder20230314LineItemsItem](../../models/shared/salesorder20230314lineitemsitem.md)     | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `taxRateId`                                                                                   | *string*                                                                                      | :heavy_check_mark:                                                                            | The Rutter ID of the [Tax Rate](/rest/version/tax-rates) linked to the sales order line item. |
+| `totalAmount`                                                                                 | *number*                                                                                      | :heavy_check_mark:                                                                            | The total amount of the sales order line item.                                                |

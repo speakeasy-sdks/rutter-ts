@@ -1,0 +1,10 @@
+# CreateSalesOrderLineItems
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `description`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `item`                                                                                        | [CreateSalesOrderLineItemsItem](../../models/shared/createsalesorderlineitemsitem.md)         | :heavy_check_mark:                                                                            | The product or service associated with the sales order line item.                             |
+| `taxRateId`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | The Rutter ID of the [Tax Rate](/rest/version/tax-rates) linked to the sales order line item. |

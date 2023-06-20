@@ -1,0 +1,12 @@
+# CreateItem
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `additionalFields`                                                              | [CreateItemAdditionalFields](../../models/shared/createitemadditionalfields.md) | :heavy_minus_sign:                                                              | Additional fields required only for a narrow set of use cases.                  |
+| `billItem`                                                                      | [CreateItemBillItem](../../models/shared/createitembillitem.md)                 | :heavy_minus_sign:                                                              | Item details associated with a bill (when the item was purchased).              |
+| `invoiceItem`                                                                   | [CreateItemInvoiceItem](../../models/shared/createiteminvoiceitem.md)           | :heavy_minus_sign:                                                              | Item details associated with an invoice (when the item was sold).               |
+| `name`                                                                          | *string*                                                                        | :heavy_check_mark:                                                              | The name of the item.                                                           |
+| `type`                                                                          | [CreateItemType](../../models/shared/createitemtype.md)                         | :heavy_minus_sign:                                                              | The type of the item.                                                           |

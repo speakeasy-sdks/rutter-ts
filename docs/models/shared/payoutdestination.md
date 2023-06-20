@@ -1,0 +1,15 @@
+# PayoutDestination
+
+The bank account used as the destination of the payout.
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `accountNumberLastDigits`                                                               | *string*                                                                                | :heavy_check_mark:                                                                      | The last digits of the bank account number associated with the payout destination.      |
+| `bankName`                                                                              | *string*                                                                                | :heavy_check_mark:                                                                      | The bank name associated with the payout destination                                    |
+| `brand`                                                                                 | *string*                                                                                | :heavy_check_mark:                                                                      | The brand associated with the payout destination.                                       |
+| `destinationId`                                                                         | *string*                                                                                | :heavy_check_mark:                                                                      | The platform specific ID of the payout destination.                                     |
+| `lastFour`                                                                              | *string*                                                                                | :heavy_check_mark:                                                                      | The last four digits of the bank account number associated with the payout destination. |
+| `routingNumber`                                                                         | *string*                                                                                | :heavy_check_mark:                                                                      | The brand associated with the payout destination.                                       |

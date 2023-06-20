@@ -1,0 +1,9 @@
+# CreatePurchaseOrderRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `createCreatePurchaseOrderRequest`                                                                 | [shared.CreateCreatePurchaseOrderRequest](../../models/shared/createcreatepurchaseorderrequest.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `accessToken`                                                                                      | *string*                                                                                           | :heavy_check_mark:                                                                                 | The access token of the connection.                                                                |

@@ -1,0 +1,12 @@
+# UpdateInvoice
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `currencyCode`                                                                | [UpdateInvoiceCurrencyCode](../../models/shared/updateinvoicecurrencycode.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `customerId`                                                                  | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `dueDate`                                                                     | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `issueDate`                                                                   | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `lineItems`                                                                   | [UpdateInvoiceLineItems](../../models/shared/updateinvoicelineitems.md)[]     | :heavy_minus_sign:                                                            | N/A                                                                           |

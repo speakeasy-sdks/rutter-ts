@@ -1,0 +1,14 @@
+# CreateVendorAddresses
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `address1`                                                                    | *string*                                                                      | :heavy_check_mark:                                                            | The first address line of the address.                                        |
+| `address2`                                                                    | *string*                                                                      | :heavy_check_mark:                                                            | The second address line of the address.                                       |
+| `city`                                                                        | *string*                                                                      | :heavy_check_mark:                                                            | The city of the address.                                                      |
+| `country`                                                                     | *string*                                                                      | :heavy_check_mark:                                                            | The country of the address.                                                   |
+| `postalCode`                                                                  | *string*                                                                      | :heavy_check_mark:                                                            | The postal code of the address.                                               |
+| `region`                                                                      | *string*                                                                      | :heavy_check_mark:                                                            | The region or state of the address.                                           |
+| `type`                                                                        | [CreateVendorAddressesType](../../models/shared/createvendoraddressestype.md) | :heavy_check_mark:                                                            | The type of the address.                                                      |

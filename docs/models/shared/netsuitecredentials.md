@@ -1,0 +1,17 @@
+# NetsuiteCredentials
+
+Credentials for Netsuite
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `consumerKey`                                                                 | *string*                                                                      | :heavy_check_mark:                                                            | Consumer Key                                                                  |
+| `consumerSecret`                                                              | *string*                                                                      | :heavy_check_mark:                                                            | Consumer Secret                                                               |
+| `platform`                                                                    | [CreateConnectionPlatforms](../../models/shared/createconnectionplatforms.md) | :heavy_check_mark:                                                            | The underlying platform.                                                      |
+| `publicKey`                                                                   | *string*                                                                      | :heavy_check_mark:                                                            | Public Key                                                                    |
+| `scope`                                                                       | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `storeName`                                                                   | *string*                                                                      | :heavy_check_mark:                                                            | Store Name                                                                    |
+| `tokenId`                                                                     | *string*                                                                      | :heavy_check_mark:                                                            | Token ID                                                                      |
+| `tokenSecret`                                                                 | *string*                                                                      | :heavy_check_mark:                                                            | Token Secret                                                                  |

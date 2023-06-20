@@ -1,0 +1,10 @@
+# SalesOrder20230314LineItemsItem
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | The Rutter ID of the [Item](/rest/version/items) linked to the sales order line item. |
+| `quantity`                                                                            | *number*                                                                              | :heavy_check_mark:                                                                    | The quantity of the sales order line item.                                            |
+| `unitAmount`                                                                          | *number*                                                                              | :heavy_check_mark:                                                                    | The price per unit of the sales order line item.                                      |
