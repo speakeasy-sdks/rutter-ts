@@ -1,0 +1,9 @@
+# CreateInvoicePaymentRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `createCreateInvoicePaymentRequest`                                                                  | [shared.CreateCreateInvoicePaymentRequest](../../models/shared/createcreateinvoicepaymentrequest.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `accessToken`                                                                                        | *string*                                                                                             | :heavy_check_mark:                                                                                   | The access token of the connection.                                                                  |

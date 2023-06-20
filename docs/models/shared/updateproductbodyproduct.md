@@ -1,0 +1,10 @@
+# UpdateProductBodyProduct
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `description`                                                                           | *string*                                                                                | :heavy_minus_sign:                                                                      | The description of the product.                                                         |
+| `name`                                                                                  | *string*                                                                                | :heavy_minus_sign:                                                                      | The name of the product.                                                                |
+| `status`                                                                                | [UpdateProductBodyProductStatus](../../models/shared/updateproductbodyproductstatus.md) | :heavy_minus_sign:                                                                      | The status of the product.                                                              |

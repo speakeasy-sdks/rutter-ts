@@ -1,0 +1,9 @@
+# CreateInvoiceCreditApplicationLinkedInvoices
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `allocatedAmount`                                                                               | *number*                                                                                        | :heavy_check_mark:                                                                              | Amount allocated to the linked invoice                                                          |
+| `id`                                                                                            | *string*                                                                                        | :heavy_check_mark:                                                                              | The Rutter ID of the [Invoice](/rest/version/invoice) linked to the invoice credit application. |

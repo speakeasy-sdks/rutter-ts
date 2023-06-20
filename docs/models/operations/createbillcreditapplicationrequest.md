@@ -1,0 +1,9 @@
+# CreateBillCreditApplicationRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `createCreateBillCreditApplicationRequest`                                                                         | [shared.CreateCreateBillCreditApplicationRequest](../../models/shared/createcreatebillcreditapplicationrequest.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `accessToken`                                                                                                      | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The access token of the connection.                                                                                |

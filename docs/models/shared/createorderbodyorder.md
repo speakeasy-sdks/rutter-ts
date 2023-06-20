@@ -1,0 +1,14 @@
+# CreateOrderBodyOrder
+
+The order to create.
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `billingAddress`                                                                                  | [CreateOrderBodyOrderBillingAddress](../../models/shared/createorderbodyorderbillingaddress.md)   | :heavy_check_mark:                                                                                | The billing address of the order.                                                                 |
+| `currencyCode`                                                                                    | *string*                                                                                          | :heavy_check_mark:                                                                                | The [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) currency code for the line item. |
+| `customer`                                                                                        | [CreateOrderBodyOrderCustomer](../../models/shared/createorderbodyordercustomer.md)               | :heavy_check_mark:                                                                                | Information about the customer.                                                                   |
+| `lineItems`                                                                                       | [CreateOrderBodyOrderLineItems](../../models/shared/createorderbodyorderlineitems.md)[]           | :heavy_check_mark:                                                                                | An array of product variants included in the order and their quantities.                          |
+| `shippingAddress`                                                                                 | [CreateOrderBodyOrderShippingAddress](../../models/shared/createorderbodyordershippingaddress.md) | :heavy_minus_sign:                                                                                | The shipping address of the order.                                                                |

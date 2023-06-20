@@ -1,0 +1,10 @@
+# CreateFulfillmentRequest
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `createOrderFulfillmentBody`                                                           | [shared.CreateOrderFulfillmentBody](../../models/shared/createorderfulfillmentbody.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `accessToken`                                                                          | *string*                                                                               | :heavy_check_mark:                                                                     | The access token of the connection.                                                    |
+| `id`                                                                                   | *string*                                                                               | :heavy_check_mark:                                                                     | The Rutter ID of the order to fulfill.                                                 |
