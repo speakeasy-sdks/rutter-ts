@@ -15,7 +15,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.balance.getBalance("c0dbbddb-4847-408f-b4e3-91e6bc158c4c", ForceFetch.True).then((res: GetBalanceResponse) => {
+sdk.balance.getBalance("407084f7-ab37-4cef-8222-5194db55410a", ForceFetch.False).then((res: GetBalanceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

@@ -1,19 +1,23 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Rutter } from "rutter-api";
-import { PostAccountingCustomersResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateAccountResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateAccountAccountType, CreateAccountCurrencyCode } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.postAccountingCustomers({
-  customer: {
-    contactName: "corrupti",
-    customerName: "provident",
-    email: "Rosalinda_Mitchell84@hotmail.com",
-    phone: "1-663-528-0923 x478",
-    subsidiaryId: "voluptatum",
+sdk.accounting.createAccount({
+  account: {
+    accountType: CreateAccountAccountType.OtherExpense,
+    additionalFields: {
+      bankAccountNumber: "provident",
+    },
+    currencyCode: CreateAccountCurrencyCode.Sdg,
+    name: "Stuart Stiedemann",
+    nominalCode: "vel",
+    subsidiaryId: "error",
   },
-}, "796ed151-a05d-4fc2-9df7-cc78ca1ba928").then((res: PostAccountingCustomersResponse) => {
+}, "a674e0f4-67cc-4879-aed1-51a05dfc2ddf").then((res: CreateAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

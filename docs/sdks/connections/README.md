@@ -20,11 +20,11 @@ import { AmazonCredentialsAmazonSellerRegion, CreateConnectionPlatforms } from "
 const sdk = new Rutter();
 
 sdk.connections.createConnection({
-  basicPassword: "consequatur",
-  basicUsername: "amet",
-  platform: CreateConnectionPlatforms.BigCommerce,
-  scope: "fugiat",
-  storeUrl: "voluptatum",
+  basicPassword: "consequuntur",
+  basicUsername: "voluptas",
+  platform: CreateConnectionPlatforms.Shopify,
+  scope: "excepturi",
+  storeUrl: "corrupti",
 }).then((res: CreateConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -55,7 +55,7 @@ import { DeleteConnectionResponse } from "rutter-api/dist/sdk/models/operations"
 
 const sdk = new Rutter();
 
-sdk.connections.deleteConnection("velit").then((res: DeleteConnectionResponse) => {
+sdk.connections.deleteConnection("est").then((res: DeleteConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -86,7 +86,7 @@ import { Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.connections.getAccessToken("f5aeb779-9d22-4e8c-9f84-93825fdc42c8").then((res: GetAccessTokenResponse) => {
+sdk.connections.getAccessToken("0dc76632-4ccb-406c-8ca1-2d02529270b8").then((res: GetAccessTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,7 +133,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.connections.getStatus("76c2c2df-b4cf-4c1c-b623-0f841fb1bd23").then((res: GetStatusResponse) => {
+sdk.connections.getStatus("d5722dd8-95b8-4bcf-a4db-959693352f74").then((res: GetStatusResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
