@@ -25,58 +25,179 @@ const sdk = new Rutter();
 
 sdk.products.createProduct({
   product: {
-    categoryId: 5645.97,
-    description: "dolore",
+    categoryId: 4426.68,
+    description: "eos",
     images: [
       {
-        src: "accusantium",
+        src: "cumque",
+      },
+      {
+        src: "ut",
+      },
+      {
+        src: "quae",
+      },
+      {
+        src: "nihil",
       },
     ],
-    name: "Ramon Franecki",
-    status: CreateProductBodyProductStatus.Unknown,
+    name: "Krystal Abshire",
+    status: CreateProductBodyProductStatus.Archived,
     tags: [
-      "vitae",
-      "iusto",
-      "atque",
+      "non",
+      "accusantium",
+      "corrupti",
+      "itaque",
     ],
     variants: [
       {
-        id: "7b01afdd-7886-4241-89eb-44873f5033f1",
+        id: "c15ceb4d-6e1e-4ae0-b75a-edf2acab58b9",
         images: [
           {
-            src: "possimus",
+            src: "et",
           },
           {
-            src: "tempore",
+            src: "quisquam",
           },
           {
-            src: "asperiores",
+            src: "unde",
           },
         ],
         inventory: {
-          locationId: "quasi",
-          totalCount: 1597.29,
+          locationId: "sed",
+          totalCount: 3815.22,
         },
         optionValues: [
           {
-            name: "Mrs. Darrel Grant",
-            value: "itaque",
+            name: "Archie Haley",
+            value: "eius",
           },
           {
-            name: "Damon Mueller",
-            value: "voluptate",
+            name: "Joyce Terry",
+            value: "fugit",
+          },
+          {
+            name: "Kara Rohan",
+            value: "possimus",
+          },
+          {
+            name: "Jerome Balistreri",
+            value: "consequatur",
           },
         ],
-        price: 9354.93,
-        sku: "minima",
+        price: 8776.19,
+        sku: "id",
+        weight: {
+          unit: CreateProductBodyProductVariantsWeightUnit.Lb,
+          value: 1876.12,
+        },
+      },
+      {
+        id: "0b69f7ac-2f72-4f88-9009-049116082078",
+        images: [
+          {
+            src: "laudantium",
+          },
+          {
+            src: "voluptates",
+          },
+          {
+            src: "minus",
+          },
+        ],
+        inventory: {
+          locationId: "autem",
+          totalCount: 4235.5,
+        },
+        optionValues: [
+          {
+            name: "Vincent Robel",
+            value: "perspiciatis",
+          },
+        ],
+        price: 3800.34,
+        sku: "ullam",
+        weight: {
+          unit: CreateProductBodyProductVariantsWeightUnit.Lb,
+          value: 8927.12,
+        },
+      },
+      {
+        id: "b40ec16f-af75-4b0b-932a-4da37cbaaf44",
+        images: [
+          {
+            src: "quia",
+          },
+          {
+            src: "quod",
+          },
+        ],
+        inventory: {
+          locationId: "quaerat",
+          totalCount: 5321.63,
+        },
+        optionValues: [
+          {
+            name: "Sheri McGlynn",
+            value: "est",
+          },
+          {
+            name: "Dale Christiansen",
+            value: "sapiente",
+          },
+        ],
+        price: 8968.11,
+        sku: "voluptatum",
         weight: {
           unit: CreateProductBodyProductVariantsWeightUnit.Kg,
-          value: 1383.06,
+          value: 6493.73,
+        },
+      },
+      {
+        id: "88f44445-73fe-4cd4-b353-f63c8209379a",
+        images: [
+          {
+            src: "ex",
+          },
+          {
+            src: "occaecati",
+          },
+          {
+            src: "optio",
+          },
+        ],
+        inventory: {
+          locationId: "at",
+          totalCount: 3210.07,
+        },
+        optionValues: [
+          {
+            name: "Benny Williamson",
+            value: "repellendus",
+          },
+          {
+            name: "Willie Leffler",
+            value: "totam",
+          },
+          {
+            name: "Ruby Pfeffer",
+            value: "quis",
+          },
+          {
+            name: "Nick Haag",
+            value: "praesentium",
+          },
+        ],
+        price: 4331.94,
+        sku: "vitae",
+        weight: {
+          unit: CreateProductBodyProductVariantsWeightUnit.Lb,
+          value: 8187.39,
         },
       },
     ],
   },
-}, "4a6a0e12-3b78-447e-859e-1f67f3c4cce4").then((res: CreateProductResponse) => {
+}, "b55f9e5d-751c-49fe-8f75-02bfdc345084").then((res: CreateProductResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -110,40 +231,47 @@ const sdk = new Rutter();
 
 sdk.products.createVariant({
   variant: {
-    id: "b6d7696f-f3c5-4747-9013-57e44f51f8b0",
+    id: "1f176445-6379-4f3f-b27e-21f862657b36",
     images: [
       {
-        src: "tempora",
+        src: "maxime",
       },
       {
-        src: "quo",
+        src: "vel",
       },
       {
-        src: "dolor",
+        src: "distinctio",
+      },
+      {
+        src: "cupiditate",
       },
     ],
     inventory: {
-      locationId: "sunt",
-      totalCount: 6050.89,
+      locationId: "hic",
+      totalCount: 3392.21,
     },
     optionValues: [
       {
-        name: "Samuel Mann",
-        value: "odit",
+        name: "Jody Turner",
+        value: "nostrum",
       },
       {
-        name: "Ana Hagenes",
-        value: "tenetur",
+        name: "Marc Koepp",
+        value: "architecto",
+      },
+      {
+        name: "Mr. Jimmie Frami",
+        value: "veniam",
       },
     ],
-    price: 5685.6,
-    sku: "modi",
+    price: 618.44,
+    sku: "dolore",
     weight: {
       unit: CreateVariantBodyVariantWeightUnit.Oz,
-      value: 4724.29,
+      value: 7303.7,
     },
   },
-}, "4c2d5cc4-9722-433e-a6bd-8fe5d00b979e", "f2038732-0590-4ccc-9096-400313b3e504").then((res: CreateVariantResponse) => {
+}, "4c21ccb4-23ab-4cdc-91fa-abdd88e71f6c", "48252d77-71e7-4fd0-b400-9ef8d29de1dd").then((res: CreateVariantResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -175,7 +303,7 @@ import { DeleteProductResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
 
-sdk.products.deleteProduct("4f65fe72-dc40-477d-8cc3-f408efc15ceb", "4d6e1eae-0f75-4aed-b2ac-ab58b991c926").then((res: DeleteProductResponse) => {
+sdk.products.deleteProduct("7097b5da-08c5-47fa-ac78-a216e19bafec", "a6191498-140b-464f-b8ae-170ef03b5f37").then((res: DeleteProductResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -206,7 +334,7 @@ import { DeleteVariantResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
 
-sdk.products.deleteVariant("ddb58946-1e74-421c-be6d-9502f0ea930b", "voluptas", "sint").then((res: DeleteVariantResponse) => {
+sdk.products.deleteVariant("e4aa8685-5596-4673-aaa5-dcb6682cb70f", "blanditiis", "minus").then((res: DeleteVariantResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -239,7 +367,7 @@ import { ForceFetch, Platform, ProductVariantsWeightUnit } from "rutter-api/dist
 
 const sdk = new Rutter();
 
-sdk.products.getProduct("f7ac2f72-f885-4009-8491-1608207888ec", "66183bfe-9659-4eb4-8ec1-6faf75b0b532", ForceFetch.False).then((res: GetProductResponse) => {
+sdk.products.getProduct("fd5fb6e9-1b9a-49f7-8846-e2c3309db053", "6d9e75ca-006f-4539-ac11-a25a8bf92f97", ForceFetch.True).then((res: GetProductResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -272,7 +400,7 @@ import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.products.listCategories("4da37cba-af44-452c-8842-c9b2ad32dafe", ForceFetch.False, "quasi").then((res: ListCategoriesResponse) => {
+sdk.products.listCategories("28ad9a9f-8bf8-4221-9253-59d98387f7a7", ForceFetch.False, "maxime").then((res: ListCategoriesResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -306,16 +434,16 @@ import { ForceFetch, Platform, ProductVariantsWeightUnit, Status } from "rutter-
 const sdk = new Rutter();
 
 sdk.products.listProducts({
-  accessToken: "a88f4444-573f-4ecd-8735-3f63c8209379",
-  createdAtMax: 646321,
-  createdAtMin: 662184,
-  cursor: "ex",
+  accessToken: "d72cd248-4da2-4172-9f2a-c41ef5725f11",
+  createdAtMax: 432597,
+  createdAtMin: 572996,
+  cursor: "id",
   forceFetch: ForceFetch.False,
-  limit: 759822,
-  name: "Tommy Zemlak",
-  status: Status.Draft,
-  updatedAtMax: 465092,
-  updatedAtMin: 579242,
+  limit: 94487,
+  name: "Tom Brown",
+  status: Status.Inactive,
+  updatedAtMax: 132517,
+  updatedAtMin: 206373,
 }).then((res: ListProductsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -349,11 +477,11 @@ const sdk = new Rutter();
 
 sdk.products.updateProduct({
   product: {
-    description: "repellendus",
-    name: "Willie Leffler",
-    status: UpdateProductBodyProductStatus.Inactive,
+    description: "impedit",
+    name: "Gladys Turner",
+    status: UpdateProductBodyProductStatus.Unknown,
   },
-}, "22bf9589-4e68-461a-9b55-f9e5d751c9fe", "8f7502bf-dc34-4508-81f1-764456379f3f").then((res: UpdateProductResponse) => {
+}, "2dfa4a19-7f6d-4e92-a151-fe1712099853", "e9f543d8-5443-49ee-a244-60443bc15418").then((res: UpdateProductResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -388,41 +516,41 @@ const sdk = new Rutter();
 
 sdk.products.updateVariant({
   variant: {
-    id: "b27e21f8-6265-47b3-afc6-b9f587ce525c",
+    id: "8c2f56e8-5da7-4832-aabd-617c3b0d51a4",
     images: [
       {
-        src: "quam",
+        src: "quidem",
       },
       {
-        src: "ea",
+        src: "doloribus",
       },
     ],
     inventory: {
-      locationId: "numquam",
-      totalCount: 1032.53,
+      locationId: "sit",
+      totalCount: 1013.18,
     },
     optionValues: [
       {
-        name: "Lee Boyer",
-        value: "veniam",
+        name: "Ismael Lockman III",
+        value: "temporibus",
       },
       {
-        name: "Joanne Kirlin",
-        value: "cumque",
+        name: "Rosemary Abshire",
+        value: "libero",
       },
       {
-        name: "Heather Sawayn",
-        value: "numquam",
+        name: "Archie Stroman",
+        value: "vitae",
       },
     ],
-    price: 1459.48,
-    sku: "amet",
+    price: 9637.49,
+    sku: "delectus",
     weight: {
-      unit: UpdateVariantBodyVariantWeightUnit.Lb,
-      value: 7057.53,
+      unit: UpdateVariantBodyVariantWeightUnit.G,
+      value: 8701.87,
     },
   },
-}, "cdc91faa-bdd8-48e7-9f6c-48252d7771e7", "hic", "at").then((res: UpdateVariantResponse) => {
+}, "4e2ae4fb-5cb3-45d1-b638-f1edb78359ec", "impedit", "minima").then((res: UpdateVariantResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

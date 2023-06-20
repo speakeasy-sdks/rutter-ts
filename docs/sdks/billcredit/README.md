@@ -15,7 +15,7 @@ import { BillCreditMemoCurrencyCode, BillCreditMemoStatus, ForceFetch, Platform 
 
 const sdk = new Rutter();
 
-sdk.billCredit.getMemo("e54599ea-3422-460e-9b20-0ce78a1bd8fb", "7a0a116c-e723-4d40-97fa-30e9af725b29", ForceFetch.True).then((res: GetMemoResponse) => {
+sdk.billCredit.getMemo("c669af90-a26c-47cd-8981-f068981d6bb3", "3cfaa348-c31b-4f40-bee4-fcf0c42b78f1", ForceFetch.True).then((res: GetMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

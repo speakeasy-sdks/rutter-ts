@@ -1,4 +1,4 @@
-# PostAccountingCustomersRequest
+# CreateAccountingCustomerRequest
 
 
 ## Fields

@@ -24,23 +24,19 @@ sdk.orders.createFulfillment({
     additionalFields: {
       notifyCustomer: false,
     },
-    carrier: "deserunt",
+    carrier: "ullam",
     lineItems: [
       {
-        lineItemId: "ipsam",
-        quantity: 292.7,
-      },
-      {
-        lineItemId: "illo",
-        quantity: 4349.55,
+        lineItemId: "delectus",
+        quantity: 2767.95,
       },
     ],
-    locationId: "incidunt",
-    service: "eveniet",
-    trackingNumber: "quae",
-    trackingUrl: "ea",
+    locationId: "quod",
+    service: "sunt",
+    trackingNumber: "ullam",
+    trackingUrl: "quam",
   },
-}, "f5bf6ae5-91bc-48bd-af36-12b63c205fda", "atque").then((res: CreateFulfillmentResponse) => {
+}, "deaa7170-f445-4acc-b667-aaf9bbad185f", "voluptates").then((res: CreateFulfillmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,51 +79,55 @@ const sdk = new Rutter();
 sdk.orders.createOrder({
   order: {
     billingAddress: {
-      address1: "quaerat",
-      address2: "aperiam",
-      city: "Jamalboro",
-      countryCode: "NZ",
-      email: "Kaley_Nienow@yahoo.com",
-      firstName: "Dandre",
-      lastName: "Hand",
-      phone: "(253) 739-4498 x90109",
-      postalCode: "93227-2134",
-      region: "libero",
+      address1: "ut",
+      address2: "nesciunt",
+      city: "Port Gerardocester",
+      countryCode: "VN",
+      email: "Norma54@yahoo.com",
+      firstName: "Wilhelm",
+      lastName: "Ratke",
+      phone: "671.277.4497 x2721",
+      postalCode: "95583",
+      region: "eos",
     },
-    currencyCode: "omnis",
+    currencyCode: "amet",
     customer: {
-      email: "Chelsea_Schamberger@yahoo.com",
-      firstName: "Myrtie",
-      lastName: "Spinka",
+      email: "Ottilie.McCullough73@gmail.com",
+      firstName: "Isai",
+      lastName: "Monahan",
     },
     lineItems: [
       {
-        quantity: 4146.44,
-        variantId: "similique",
+        quantity: 9503.37,
+        variantId: "recusandae",
       },
       {
-        quantity: 4212.73,
-        variantId: "dicta",
+        quantity: 7115.72,
+        variantId: "iusto",
       },
       {
-        quantity: 9262.66,
-        variantId: "sapiente",
+        quantity: 4564.73,
+        variantId: "harum",
+      },
+      {
+        quantity: 3216.54,
+        variantId: "quod",
       },
     ],
     shippingAddress: {
-      address1: "id",
-      address2: "odit",
-      city: "New Karenland",
-      countryCode: "GR",
-      email: "Xavier63@yahoo.com",
-      firstName: "Leora",
-      lastName: "Upton",
-      phone: "724.948.2990 x3532",
-      postalCode: "83615",
-      region: "ratione",
+      address1: "ratione",
+      address2: "totam",
+      city: "Eugene",
+      countryCode: "PM",
+      email: "Wiley90@yahoo.com",
+      firstName: "Emelie",
+      lastName: "Bechtelar",
+      phone: "1-995-606-3272 x439",
+      postalCode: "49348",
+      region: "nesciunt",
     },
   },
-}, "1c87adf5-96fd-4f1a-9837-ae80c1c19c95").then((res: CreateOrderResponse) => {
+}, "85a3c4ac-631b-499e-a6ce-d8f9fdb9410f").then((res: CreateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -169,7 +169,7 @@ import {
 
 const sdk = new Rutter();
 
-sdk.orders.getOrder("ba998678-fa3f-4696-991a-f388ce036144", "48c7977a-0ef2-4f53-a028-efeef934152e", Expand1.Transactions, ForceFetch.False).then((res: GetOrderResponse) => {
+sdk.orders.getOrder("63bbf817-837b-401a-bdd7-88624189eb44", "873f5033-f19d-4bf1-a5ce-4152eab9cd7e", Expand1.Transactions, ForceFetch.True).then((res: GetOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -216,20 +216,20 @@ import {
 const sdk = new Rutter();
 
 sdk.orders.listOrders({
-  accessToken: "7e253f4c-157d-4eaa-b170-f445accf667a",
-  createdAtMax: 642272,
-  createdAtMin: 994902,
-  cursor: "cupiditate",
+  accessToken: "224a6a0e-123b-4784-bec5-9e1f67f3c4cc",
+  createdAtMax: 922207,
+  createdAtMin: 273349,
+  cursor: "libero",
   expand: Expand1.Transactions,
-  forceFetch: ForceFetch.False,
-  fulfillmentStatus: FulfillmentStatus.Partial,
-  limit: 636190,
-  orderNumber: 855647,
-  paymentStatus: PaymentStatus.Pending,
-  phone: "499-420-8369 x3751",
-  properties: "atque",
-  updatedAtMax: 979706,
-  updatedAtMin: 714054,
+  forceFetch: ForceFetch.True,
+  fulfillmentStatus: FulfillmentStatus.Unknown,
+  limit: 478576,
+  orderNumber: 401083,
+  paymentStatus: PaymentStatus.Refunded,
+  phone: "1-992-834-2430 x123",
+  properties: "nihil",
+  updatedAtMax: 887865,
+  updatedAtMin: 293799,
 }).then((res: ListOrdersResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -272,9 +272,9 @@ const sdk = new Rutter();
 
 sdk.orders.updateOrder({
   order: {
-    status: UpdateOrderBodyOrderStatus.Cancelled,
+    status: UpdateOrderBodyOrderStatus.Archived,
   },
-}, "8c20cb67-fc4b-4425-a99e-6234c9f7b79d", "feb77a5c-38d4-4baf-91e5-06ef890a54b4").then((res: UpdateOrderResponse) => {
+}, "f51f8b08-4c31-497e-993a-245467f94874", "c2d5cc49-7223-43e6-abd8-fe5d00b979ef").then((res: UpdateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

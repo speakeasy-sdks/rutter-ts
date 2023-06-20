@@ -3,6 +3,7 @@
  */
 
 export * from "./createaccount";
+export * from "./createaccountingcustomer";
 export * from "./createattachment";
 export * from "./createbill";
 export * from "./createbillcreditapplication";
@@ -90,7 +91,6 @@ export * from "./listsubsidiaries";
 export * from "./listtaxrates";
 export * from "./listtransactions";
 export * from "./listvendors";
-export * from "./postaccountingcustomers";
 export * from "./updatebill";
 export * from "./updateinvoice";
 export * from "./updateinvoicepayment";

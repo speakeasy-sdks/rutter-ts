@@ -25,11 +25,11 @@ import {
 const sdk = new Rutter();
 
 sdk.payouts.listPayouts({
-  accessToken: "75f16f56-d385-4a3c-8ac6-31b99e26ced8",
-  arrivalAtMax: "a",
-  arrivalAtMin: "natus",
-  createdAtMax: "sapiente",
-  createdAtMin: "repellendus",
+  accessToken: "20387320-590c-4cc1-8964-00313b3e5044",
+  arrivalAtMax: "delectus",
+  arrivalAtMin: "aliquid",
+  createdAtMax: "ullam",
+  createdAtMin: "maiores",
   forceFetch: ForceFetch.False,
 }).then((res: ListPayoutsResponse) => {
   if (res.statusCode == 200) {

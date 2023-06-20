@@ -37,6 +37,7 @@ src/sdk/models/operations/createbill.ts
 src/sdk/models/operations/createbillcreditapplication.ts
 src/sdk/models/operations/createbillcreditmemo.ts
 src/sdk/models/operations/createbillpayment.ts
+src/sdk/models/operations/createaccountingcustomer.ts
 src/sdk/models/operations/createexpense.ts
 src/sdk/models/operations/createinvoice.ts
 src/sdk/models/operations/createinvoicecreditapplication.ts
@@ -125,7 +126,6 @@ src/sdk/models/operations/getstore.ts
 src/sdk/models/operations/listsubscriptions.ts
 src/sdk/models/operations/exchangepublictoken.ts
 src/sdk/models/operations/listtransactions.ts
-src/sdk/models/operations/postaccountingcustomers.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/accountresponse.ts
 src/sdk/models/shared/account.ts
@@ -152,6 +152,10 @@ src/sdk/models/shared/billpaymentresponse.ts
 src/sdk/models/shared/billpayment.ts
 src/sdk/models/shared/createcreatebillpaymentrequest.ts
 src/sdk/models/shared/createbillpayment.ts
+src/sdk/models/shared/accountingcustomer20230207response.ts
+src/sdk/models/shared/accountingcustomer20230207.ts
+src/sdk/models/shared/createcreateaccountingcustomerrequest.ts
+src/sdk/models/shared/createaccountingcustomer.ts
 src/sdk/models/shared/expenseresponse.ts
 src/sdk/models/shared/expense.ts
 src/sdk/models/shared/createcreateexpenserequest.ts
@@ -201,7 +205,6 @@ src/sdk/models/shared/billpaymentresponsewithconnection.ts
 src/sdk/models/shared/companyinfo20230314responsewithconnection.ts
 src/sdk/models/shared/companyinfo20230314.ts
 src/sdk/models/shared/accountingcustomer20230207responsewithconnection.ts
-src/sdk/models/shared/accountingcustomer20230207.ts
 src/sdk/models/shared/expenseresponsewithconnection.ts
 src/sdk/models/shared/invoiceresponsewithconnection.ts
 src/sdk/models/shared/invoicecreditmemoresponse.ts
@@ -334,9 +337,6 @@ src/sdk/models/shared/exchangetokenresponse.ts
 src/sdk/models/shared/exchangetokenbody.ts
 src/sdk/models/shared/listtransactionsresponse.ts
 src/sdk/models/shared/sort.ts
-src/sdk/models/shared/accountingcustomer20230207response.ts
-src/sdk/models/shared/createcreateaccountingcustomerrequest.ts
-src/sdk/models/shared/createaccountingcustomer.ts
 src/sdk/models/shared/index.ts
 docs/sdks/rutter/README.md
 docs/sdks/accounting/README.md
@@ -366,6 +366,8 @@ docs/models/operations/createbillcreditmemorequest.md
 docs/models/operations/createbillcreditmemoresponse.md
 docs/models/operations/createbillpaymentrequest.md
 docs/models/operations/createbillpaymentresponse.md
+docs/models/operations/createaccountingcustomerrequest.md
+docs/models/operations/createaccountingcustomerresponse.md
 docs/models/operations/createexpenserequest.md
 docs/models/operations/createexpenseresponse.md
 docs/models/operations/createinvoicerequest.md
@@ -541,8 +543,6 @@ docs/models/operations/listsubscriptionsresponse.md
 docs/models/operations/exchangepublictokenresponse.md
 docs/models/operations/listtransactionsrequest.md
 docs/models/operations/listtransactionsresponse.md
-docs/models/operations/postaccountingcustomersrequest.md
-docs/models/operations/postaccountingcustomersresponse.md
 docs/models/shared/accountresponse.md
 docs/models/shared/accountaccounttype.md
 docs/models/shared/accountcategory.md
@@ -605,6 +605,13 @@ docs/models/shared/createcreatebillpaymentrequest.md
 docs/models/shared/createbillpaymentcurrencycode.md
 docs/models/shared/createbillpaymentlinkedbills.md
 docs/models/shared/createbillpayment.md
+docs/models/shared/accountingcustomer20230207response.md
+docs/models/shared/accountingcustomer20230207addressestype.md
+docs/models/shared/accountingcustomer20230207addresses.md
+docs/models/shared/accountingcustomer20230207status.md
+docs/models/shared/accountingcustomer20230207.md
+docs/models/shared/createcreateaccountingcustomerrequest.md
+docs/models/shared/createaccountingcustomer.md
 docs/models/shared/expenseresponse.md
 docs/models/shared/expensecurrencycode.md
 docs/models/shared/expenseexpensetype.md
@@ -713,10 +720,6 @@ docs/models/shared/companyinfo20230314responsewithconnection.md
 docs/models/shared/companyinfo20230314currencycode.md
 docs/models/shared/companyinfo20230314.md
 docs/models/shared/accountingcustomer20230207responsewithconnection.md
-docs/models/shared/accountingcustomer20230207addressestype.md
-docs/models/shared/accountingcustomer20230207addresses.md
-docs/models/shared/accountingcustomer20230207status.md
-docs/models/shared/accountingcustomer20230207.md
 docs/models/shared/expenseresponsewithconnection.md
 docs/models/shared/invoiceresponsewithconnection.md
 docs/models/shared/invoicecreditmemoresponse.md
@@ -1013,6 +1016,3 @@ docs/models/shared/exchangetokenresponse.md
 docs/models/shared/exchangetokenbody.md
 docs/models/shared/listtransactionsresponse.md
 docs/models/shared/sort.md
-docs/models/shared/accountingcustomer20230207response.md
-docs/models/shared/createcreateaccountingcustomerrequest.md
-docs/models/shared/createaccountingcustomer.md

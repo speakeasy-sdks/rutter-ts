@@ -18,7 +18,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.customers.getCustomer("fdb14db6-be5a-4685-998e-22ae20da16fc", "2b271a28-9c57-4e85-8e90-439d22246569", ForceFetch.True).then((res: GetCustomerResponse) => {
+sdk.customers.getCustomer("533994d7-8de3-4b6e-9389-f5abb7f66255", "0a28382a-c483-4afd-a315-bba650164e06", ForceFetch.False).then((res: GetCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -51,7 +51,7 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
-sdk.customers.getCustomerGroup("62407084-f7ab-437c-af02-225194db5541", "0adc669a-f90a-426c-bcdc-981f068981d6", ForceFetch.False).then((res: GetCustomerGroupResponse) => {
+sdk.customers.getCustomerGroup("5bf6ae59-1bc8-4bde-b361-2b63c205fda8", "40774a68-a9a3-45d0-86b6-f66fef020e9f", ForceFetch.True).then((res: GetCustomerGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -85,12 +85,12 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.customers.listCustomerGroups({
-  accessToken: "b33cfaa3-48c3-41bf-807e-e4fcf0c42b78",
-  cursor: "reiciendis",
-  forceFetch: ForceFetch.True,
-  limit: 353009,
-  updatedAtMax: 393630,
-  updatedAtMin: 159496,
+  accessToken: "43b4257b-992c-48db-9a6a-61efa2198258",
+  cursor: "doloribus",
+  forceFetch: ForceFetch.False,
+  limit: 13655,
+  updatedAtMax: 630286,
+  updatedAtMin: 612181,
 }).then((res: ListCustomerGroupsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -123,14 +123,14 @@ import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
 const sdk = new Rutter();
 
 sdk.customers.listCustomers({
-  accessToken: "6398a0dc-7663-424c-8b06-c8ca12d02529",
-  cursor: "magni",
-  email: "Abdul_Pouros@yahoo.com",
-  forceFetch: ForceFetch.True,
-  limit: 488442,
-  phone: "1-388-653-7578",
-  updatedAtMax: 968212,
-  updatedAtMin: 170934,
+  accessToken: "eba47f7d-3ef0-4496-80d6-a1831c87adf5",
+  cursor: "cupiditate",
+  email: "Vivian.Sipes65@yahoo.com",
+  forceFetch: ForceFetch.False,
+  limit: 505908,
+  phone: "568.607.1715",
+  updatedAtMax: 756936,
+  updatedAtMin: 580689,
 }).then((res: ListCustomersResponse) => {
   if (res.statusCode == 200) {
     // handle response

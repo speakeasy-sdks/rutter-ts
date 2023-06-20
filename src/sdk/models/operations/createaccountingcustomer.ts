@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class PostAccountingCustomersRequest extends SpeakeasyBase {
+export class CreateAccountingCustomerRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     createCreateAccountingCustomerRequest: shared.CreateCreateAccountingCustomerRequest;
 
@@ -17,7 +17,7 @@ export class PostAccountingCustomersRequest extends SpeakeasyBase {
     accessToken: string;
 }
 
-export class PostAccountingCustomersResponse extends SpeakeasyBase {
+export class CreateAccountingCustomerResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
