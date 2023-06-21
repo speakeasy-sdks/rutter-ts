@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 2f3b3ef533662d67f59ddade23ff2ff3
   docVersion: "2023-03-14"
-  speakeasyVersion: 1.49.0
-  generationVersion: 2.41.4
+  speakeasyVersion: 1.49.1
+  generationVersion: 2.41.5
 generation:
   comments:
     disableComments: false
@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.0.2
+  version: 1.0.3
   author: Rutter
   maxMethodParams: "4"
   packageName: rutter-api
