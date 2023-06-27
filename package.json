@@ -1,6 +1,6 @@
 {
   "name": "rutter-api",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "author": "Rutter",
   "scripts": {
     "prepare": "tsc --build"
