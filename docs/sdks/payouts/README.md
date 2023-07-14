@@ -11,16 +11,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListPayoutsResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  ForceFetch,
-  OrderTransactionPaymentMethodType,
-  OrderTransactionStatus,
-  OrderTransactionType,
-  PayoutSchedule,
-  PayoutStatus,
-  PayoutType,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

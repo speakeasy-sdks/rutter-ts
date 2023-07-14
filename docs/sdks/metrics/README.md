@@ -12,7 +12,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetAccountingMetricResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -45,7 +45,7 @@ sdk.metrics.getAccountingMetric("640d6a18-31c8-47ad-b596-fdf1ad837ae8", "volupta
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetCommerceMetricResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

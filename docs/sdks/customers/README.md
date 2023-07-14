@@ -14,7 +14,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetCustomerResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -47,7 +47,7 @@ sdk.customers.getCustomer("12d02529-270b-48d5-b22d-d895b8bcf24d", "b9596933-52f7
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetCustomerGroupResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -80,7 +80,7 @@ sdk.customers.getCustomerGroup("f5abb7f6-6255-40a2-8382-ac483afd2315", "bba65016
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListCustomerGroupsResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -118,7 +118,7 @@ sdk.customers.listCustomerGroups({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListCustomersResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

@@ -11,7 +11,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetMemoResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillCreditMemoCurrencyCode, BillCreditMemoStatus, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

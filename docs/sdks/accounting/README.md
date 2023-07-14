@@ -1086,14 +1086,7 @@ sdk.accounting.createVendor({
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetAccountResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  AccountAccountType,
-  AccountCategory,
-  AccountCurrencyCode,
-  AccountStatus,
-  ForceFetch,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1160,7 +1153,7 @@ sdk.accounting.getAttachment("c646ecb5-7340-49e3-ab1e-5a2b12eb07f1", EntityType.
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetBillResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillCurrencyCode, BillStatus, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1193,7 +1186,7 @@ sdk.accounting.getBill("b99545fc-95fa-4889-b0e1-89dbb30fcb33", "ea055b19-7cd4-44
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetBillPaymentResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillPaymentCurrencyCode, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1226,7 +1219,7 @@ sdk.accounting.getBillPayment("b656bcdb-35ff-42e4-b275-37a8cd9e7319", "porro", F
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetCompanyInfoResponse } from "rutter-api/dist/sdk/models/operations";
-import { CompanyInfo20230314CurrencyCode, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1258,12 +1251,7 @@ sdk.accounting.getCompanyInfo("77d525f7-7b11-44ee-b52f-f785fc37814d", ForceFetch
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetAccountingCustomerResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  AccountingCustomer20230207AddressesType,
-  AccountingCustomer20230207Status,
-  ForceFetch,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1296,7 +1284,7 @@ sdk.accounting.getCustomer("c98e0c2b-b89e-4b75-9ad6-36c600503d8b", "b31180f7-39a
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetExpenseResponse } from "rutter-api/dist/sdk/models/operations";
-import { ExpenseCurrencyCode, ExpenseExpenseType, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1329,7 +1317,7 @@ sdk.accounting.getExpense("981d4c70-0b60-47f3-893c-73b9da3f2ced", "a7e23f22-5741
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, InvoiceLinkedPaymentsType, InvoiceStatus, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1362,7 +1350,7 @@ sdk.accounting.getInvoice("7a5b4046-3a7d-4575-b140-0e764ad7334e", "c1b781b3-6a08
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetInvoiceCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, InvoiceCreditMemoStatus } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1395,7 +1383,7 @@ sdk.accounting.getInvoiceCreditMemo("2eb2164c-f9ab-4836-ac72-3ffda9e06bee", "482
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, InvoicePaymentCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1428,7 +1416,7 @@ sdk.accounting.getInvoicePayment("cce8f197-7773-4e63-962a-7b408f05e3d4", "8fdaf3
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetItemResponse } from "rutter-api/dist/sdk/models/operations";
-import { AccountingItemStatus, AccountingItemType, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1461,7 +1449,7 @@ sdk.accounting.getItem("f3b756c1-1f6c-437a-9126-243835bbc05a", "23a45cef-c5fd-4e
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetJournalEntryResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, JournalEntryCurrencyCode, Platform } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1494,12 +1482,7 @@ sdk.accounting.getJournalEntry("dc5e3476-2799-4bfb-be69-49fb2bb4ecae", "6c3d5db3
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetPurchaseOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  ForceFetch,
-  Platform,
-  PurchaseOrder20230314CurrencyCode,
-  PurchaseOrder20230314Status,
-} from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1532,7 +1515,7 @@ sdk.accounting.getPurchaseOrder("644cf5e9-d9a4-4578-adc1-ac600dec001a", "c802e2e
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetSalesOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, SalesOrder20230314CurrencyCode, SalesOrder20230314Status } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1565,7 +1548,7 @@ sdk.accounting.getSalesOrder("c14125b0-960a-4668-951a-472af923c594", "9f83f350-c
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetSubsidiaryResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, SubsidiaryStatus } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1631,7 +1614,7 @@ sdk.accounting.getTaxRate("d0bd0af2-dfe1-43db-8f62-cba3f8941aeb", "c0b80a69-24d3
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetVendorResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, VendorAddressesType, VendorCurrencyCode, VendorStatus } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1664,15 +1647,7 @@ sdk.accounting.getVendor("d6fa1804-e54c-482f-968a-363c8873e484", "380b1f6b-8ca2-
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListAccountsResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  AccountAccountType,
-  AccountCategory,
-  AccountCurrencyCode,
-  AccountStatus,
-  Expand,
-  ForceFetch,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1785,7 +1760,7 @@ sdk.accounting.listBalanceSheets("fefa9c95-f2ea-4c55-a5d3-07cfee81206e", "sed", 
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListBillCreditMemosResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillCreditMemoCurrencyCode, BillCreditMemoStatus, Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1824,7 +1799,7 @@ sdk.accounting.listBillCreditMemos({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListBillPaymentsResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillPaymentCurrencyCode, Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1863,7 +1838,7 @@ sdk.accounting.listBillPayments({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListBillsResponse } from "rutter-api/dist/sdk/models/operations";
-import { BillCurrencyCode, BillStatus, Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1936,7 +1911,7 @@ sdk.accounting.listCashFlowStatements("c4aa5f3c-abd9-405a-972e-056728227b2d", "n
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListClassesResponse } from "rutter-api/dist/sdk/models/operations";
-import { ClassStatus, Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -1975,7 +1950,7 @@ sdk.accounting.listClasses({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListCurrenciesResponse } from "rutter-api/dist/sdk/models/operations";
-import { CurrencyCurrencyCode, Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2014,13 +1989,7 @@ sdk.accounting.listCurrencies({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListAccountingCustomersResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  AccountingCustomer20230207AddressesType,
-  AccountingCustomer20230207Status,
-  Expand,
-  ForceFetch,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2059,7 +2028,7 @@ sdk.accounting.listCustomers({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListDepartmentsResponse } from "rutter-api/dist/sdk/models/operations";
-import { DepartmentStatus, Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2098,14 +2067,7 @@ sdk.accounting.listDepartments({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListExpensesResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand,
-  ExpenseCurrencyCode,
-  ExpenseExpenseType,
-  ExpenseType,
-  ForceFetch,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ExpenseType, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2145,7 +2107,7 @@ sdk.accounting.listExpenses({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListIncomeStatementsResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, IncomeStatementAccountingStandard } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2179,7 +2141,7 @@ sdk.accounting.listIncomeStatements("55554080-d40b-4cac-86cb-d6b5f3ec9093", "acc
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListInvoiceCreditMemosResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, InvoiceCreditMemoStatus } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2218,7 +2180,7 @@ sdk.accounting.listInvoiceCreditMemos({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListInvoicePaymentsResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, InvoicePaymentCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2257,7 +2219,7 @@ sdk.accounting.listInvoicePayments({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListInvoicesResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, InvoiceLinkedPaymentsType, InvoiceStatus, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2296,7 +2258,7 @@ sdk.accounting.listInvoices({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListItemsResponse } from "rutter-api/dist/sdk/models/operations";
-import { AccountingItemStatus, AccountingItemType, Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2335,7 +2297,7 @@ sdk.accounting.listItems({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListJournalEntriesResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, JournalEntryCurrencyCode, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2374,7 +2336,7 @@ sdk.accounting.listJournalEntries({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListLocationsResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, LocationStatus } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2413,13 +2375,7 @@ sdk.accounting.listLocations({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListPurchaseOrdersResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand,
-  ForceFetch,
-  Platform,
-  PurchaseOrder20230314CurrencyCode,
-  PurchaseOrder20230314Status,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2458,7 +2414,7 @@ sdk.accounting.listPurchaseOrders({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListReportsResponse } from "rutter-api/dist/sdk/models/operations";
-import { CompanyInfo20230207BaseCurrencyCode, Filter, ForceFetch } from "rutter-api/dist/sdk/models/shared";
+import { Filter, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2491,13 +2447,7 @@ sdk.accounting.listReports("63d48e93-5c2c-49e8-9f30-be3e43202d72", Filter.Tree, 
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListSalesOrdersResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand,
-  ForceFetch,
-  Platform,
-  SalesOrder20230314CurrencyCode,
-  SalesOrder20230314Status,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2536,7 +2486,7 @@ sdk.accounting.listSalesOrders({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListSubsidiariesResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, Platform, SubsidiaryStatus } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -2614,14 +2564,7 @@ sdk.accounting.listTaxRates({
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListVendorsResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand,
-  ForceFetch,
-  Platform,
-  VendorAddressesType,
-  VendorCurrencyCode,
-  VendorStatus,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

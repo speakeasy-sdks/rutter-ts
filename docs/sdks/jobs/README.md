@@ -11,7 +11,6 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetJobResponse } from "rutter-api/dist/sdk/models/operations";
-import { AsynchronousJobStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

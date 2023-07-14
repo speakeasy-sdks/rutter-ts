@@ -11,7 +11,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetStoreResponse } from "rutter-api/dist/sdk/models/operations";
-import { Expand, ForceFetch, Platform } from "rutter-api/dist/sdk/models/shared";
+import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
