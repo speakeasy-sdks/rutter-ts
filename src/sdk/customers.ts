@@ -69,6 +69,13 @@ export class Customers {
                         JSON.parse(decodedRes),
                         shared.GetCustomerResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -130,6 +137,13 @@ export class Customers {
                         JSON.parse(decodedRes),
                         shared.GetCustomerGroupResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -189,6 +203,13 @@ export class Customers {
                         JSON.parse(decodedRes),
                         shared.ListCustomerGroupsResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -246,6 +267,13 @@ export class Customers {
                     res.listCustomersResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListCustomersResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

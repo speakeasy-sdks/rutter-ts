@@ -67,6 +67,13 @@ export class Balance {
                         JSON.parse(decodedRes),
                         shared.GetBalanceResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }

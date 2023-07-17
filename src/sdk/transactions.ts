@@ -66,6 +66,13 @@ export class Transactions {
                         JSON.parse(decodedRes),
                         shared.ListTransactionsResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }

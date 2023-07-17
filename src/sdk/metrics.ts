@@ -70,6 +70,13 @@ export class Metrics {
                         JSON.parse(decodedRes),
                         shared.AggregateMetricResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -130,6 +137,13 @@ export class Metrics {
                     res.aggregateMetricResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AggregateMetricResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

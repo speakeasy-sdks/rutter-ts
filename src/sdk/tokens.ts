@@ -79,6 +79,13 @@ export class Tokens {
                         JSON.parse(decodedRes),
                         shared.ExchangeTokenResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }

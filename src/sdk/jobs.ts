@@ -61,6 +61,13 @@ export class Jobs {
                         JSON.parse(decodedRes),
                         shared.AsynchronousJob
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
