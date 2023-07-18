@@ -339,6 +339,7 @@ src/sdk/models/shared/exchangetokenbody.ts
 src/sdk/models/shared/listtransactionsresponse.ts
 src/sdk/models/shared/sort.ts
 src/sdk/models/shared/index.ts
+src/sdk/models/errors/index.ts
 docs/sdks/rutter/README.md
 docs/sdks/accounting/README.md
 docs/sdks/balance/README.md
