@@ -11,7 +11,7 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListSubscriptionsResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, SubscriptionStatus } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

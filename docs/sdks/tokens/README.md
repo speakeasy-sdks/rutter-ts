@@ -11,7 +11,6 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { ExchangePublicTokenResponse } from "rutter-api/dist/sdk/models/operations";
-import { ExchangeTokenResponsePlatform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

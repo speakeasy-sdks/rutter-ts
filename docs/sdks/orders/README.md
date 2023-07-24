@@ -15,7 +15,6 @@
 ```typescript
 import { Rutter } from "rutter-api";
 import { CreateFulfillmentResponse } from "rutter-api/dist/sdk/models/operations";
-import { Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -69,14 +68,6 @@ sdk.orders.createFulfillment({
 ```typescript
 import { Rutter } from "rutter-api";
 import { CreateOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  OrderFulfillmentStatus,
-  OrderPaymentStatus,
-  OrderStatus,
-  OrderTransactionPaymentMethodType,
-  OrderTransactionStatus,
-  OrderTransactionType,
-} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -155,17 +146,7 @@ sdk.orders.createOrder({
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand1,
-  ForceFetch,
-  OrderFulfillmentStatus,
-  OrderPaymentStatus,
-  OrderStatus,
-  OrderTransactionPaymentMethodType,
-  OrderTransactionStatus,
-  OrderTransactionType,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand1, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -199,19 +180,7 @@ sdk.orders.getOrder("5a3c4ac6-31b9-49e2-aced-8f9fdb9410f6", "3bbf8178-37b0-41af-
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListOrdersResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  Expand1,
-  ForceFetch,
-  FulfillmentStatus,
-  OrderFulfillmentStatus,
-  OrderPaymentStatus,
-  OrderStatus,
-  OrderTransactionPaymentMethodType,
-  OrderTransactionStatus,
-  OrderTransactionType,
-  PaymentStatus,
-  Platform,
-} from "rutter-api/dist/sdk/models/shared";
+import { Expand1, ForceFetch, FulfillmentStatus, PaymentStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -257,16 +226,7 @@ sdk.orders.listOrders({
 ```typescript
 import { Rutter } from "rutter-api";
 import { UpdateOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  OrderFulfillmentStatus,
-  OrderPaymentStatus,
-  OrderStatus,
-  OrderTransactionPaymentMethodType,
-  OrderTransactionStatus,
-  OrderTransactionType,
-  Platform,
-  UpdateOrderBodyOrderStatus,
-} from "rutter-api/dist/sdk/models/shared";
+import { UpdateOrderBodyOrderStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

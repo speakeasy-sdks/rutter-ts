@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -74,6 +75,13 @@ export class Connections {
                         JSON.parse(decodedRes),
                         shared.CreateConnectionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -129,6 +137,13 @@ export class Connections {
                     res.deleteConnectionResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.DeleteConnectionResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -187,6 +202,13 @@ export class Connections {
                         JSON.parse(decodedRes),
                         shared.GetAccessTokenConnectionResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -244,6 +266,13 @@ export class Connections {
                         JSON.parse(decodedRes),
                         shared.GetConnectionStatusResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -295,6 +324,13 @@ export class Connections {
                     res.listConnectionsResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListConnectionsResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

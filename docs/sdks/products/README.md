@@ -178,7 +178,7 @@ sdk.products.createProduct({
 ```typescript
 import { Rutter } from "rutter-api";
 import { CreateVariantResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateVariantBodyVariantWeightUnit, VariantResponseVariantWeightUnit } from "rutter-api/dist/sdk/models/shared";
+import { CreateVariantBodyVariantWeightUnit } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -306,7 +306,7 @@ sdk.products.deleteVariant("8e71f6c4-8252-4d77-b1e7-fd074009ef8d", "consequuntur
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetProductResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, ProductVariantsWeightUnit } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -372,7 +372,7 @@ sdk.products.listCategories("5f37e4aa-8685-4559-a673-2aa5dcb6682c", ForceFetch.F
 ```typescript
 import { Rutter } from "rutter-api";
 import { ListProductsResponse } from "rutter-api/dist/sdk/models/operations";
-import { ForceFetch, Platform, ProductVariantsWeightUnit, Status } from "rutter-api/dist/sdk/models/shared";
+import { ForceFetch, Status } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -414,7 +414,7 @@ sdk.products.listProducts({
 ```typescript
 import { Rutter } from "rutter-api";
 import { UpdateProductResponse } from "rutter-api/dist/sdk/models/operations";
-import { ProductVariantsWeightUnit, UpdateProductBodyProductStatus } from "rutter-api/dist/sdk/models/shared";
+import { UpdateProductBodyProductStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -453,7 +453,7 @@ sdk.products.updateProduct({
 ```typescript
 import { Rutter } from "rutter-api";
 import { UpdateVariantResponse } from "rutter-api/dist/sdk/models/operations";
-import { UpdateVariantBodyVariantWeightUnit, VariantResponseVariantWeightUnit } from "rutter-api/dist/sdk/models/shared";
+import { UpdateVariantBodyVariantWeightUnit } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

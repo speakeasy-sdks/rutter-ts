@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -81,6 +82,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createAccountResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -162,6 +170,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.postAttachmentResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -235,6 +250,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createBillResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -309,6 +331,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createBillCreditApplicationResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -383,6 +412,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createBillCreditMemoResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -456,6 +492,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createBillPaymentResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -530,6 +573,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createAccountingCustomer20230207Response = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -603,6 +653,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createExpenseResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -676,6 +733,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoiceResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -751,6 +815,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoiceCreditApplicationResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -825,6 +896,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoiceCreditMemo20230207Response = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -899,6 +977,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoicePayment20230207Response = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -972,6 +1057,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createAccountingItemResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1046,6 +1138,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createJournalEntryResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1120,6 +1219,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createPurchaseOrderResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1193,6 +1299,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createSalesOrder20230314Response = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1266,6 +1379,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createVendorResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1326,6 +1446,13 @@ export class Accounting {
                     res.accountResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1394,6 +1521,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.AttachmentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1454,6 +1588,13 @@ export class Accounting {
                     res.billResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.BillResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1516,6 +1657,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.BillPaymentResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1574,6 +1722,13 @@ export class Accounting {
                     res.companyInfo20230314ResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CompanyInfo20230314ResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1637,6 +1792,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.AccountingCustomer20230207ResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1698,6 +1860,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ExpenseResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1758,6 +1927,13 @@ export class Accounting {
                     res.invoiceResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.InvoiceResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1825,6 +2001,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.InvoiceCreditMemoResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -1885,6 +2068,13 @@ export class Accounting {
                     res.invoicePaymentResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.InvoicePaymentResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -1947,6 +2137,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.AccountingItemResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2007,6 +2204,13 @@ export class Accounting {
                     res.journalEntryResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.JournalEntryResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2069,6 +2273,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.PurchaseOrder20230314ResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2129,6 +2340,13 @@ export class Accounting {
                     res.salesOrder20230314ResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.SalesOrder20230314ResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2191,6 +2409,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.SubsidiaryResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2251,6 +2476,13 @@ export class Accounting {
                     res.taxRateResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.TaxRateResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2313,6 +2545,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.VendorResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2371,6 +2610,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListAccountResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2428,6 +2674,13 @@ export class Accounting {
                     res.listAttachmentsResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListAttachmentsResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2492,6 +2745,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.BalanceSheetResult
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2551,6 +2811,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListBillCreditMemoResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2609,6 +2876,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListBillPaymentResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2666,6 +2940,13 @@ export class Accounting {
                     res.listBillResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListBillResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2731,6 +3012,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListCashFlowStatementResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2789,6 +3077,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListClassesResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2846,6 +3141,13 @@ export class Accounting {
                     res.listCurrencyResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListCurrencyResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -2906,6 +3208,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListAccountingCustomer20230207ResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -2964,6 +3273,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListDepartmentsResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3021,6 +3337,13 @@ export class Accounting {
                     res.listExpenseResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListExpenseResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3086,6 +3409,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListIncomeStatementResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3144,6 +3474,13 @@ export class Accounting {
                     res.listInvoiceCreditMemoResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListInvoiceCreditMemoResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3204,6 +3541,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListInvoicePaymentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3262,6 +3606,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListInvoiceResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3319,6 +3670,13 @@ export class Accounting {
                     res.listAccountingItemResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListAccountingItemResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3379,6 +3737,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListJournalEntryResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3436,6 +3801,13 @@ export class Accounting {
                     res.listLocationsResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListLocationsResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3495,6 +3867,13 @@ export class Accounting {
                     res.listPurchaseOrder20230314ResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListPurchaseOrder20230314ResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3557,6 +3936,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.FinancialReport
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3614,6 +4000,13 @@ export class Accounting {
                     res.listSalesOrder20230314ResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListSalesOrder20230314ResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3673,6 +4066,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListSubsidiaryResponseWithConnection
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3731,6 +4131,13 @@ export class Accounting {
                         JSON.parse(decodedRes),
                         shared.ListTaxRateResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3788,6 +4195,13 @@ export class Accounting {
                     res.listVendorResponseWithConnection = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListVendorResponseWithConnection
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -3864,6 +4278,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createUpdateBillResponseResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -3939,6 +4360,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoiceResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -4015,6 +4443,13 @@ export class Accounting {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createInvoicePayment20230207Response = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }

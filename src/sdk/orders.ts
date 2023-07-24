@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -86,6 +87,13 @@ export class Orders {
                         JSON.parse(decodedRes),
                         shared.CreateOrderFulfillmentResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -158,6 +166,13 @@ export class Orders {
                         JSON.parse(decodedRes),
                         shared.CreateOrderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -221,6 +236,13 @@ export class Orders {
                         JSON.parse(decodedRes),
                         shared.GetOrderResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -278,6 +300,13 @@ export class Orders {
                     res.listOrdersResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListOrdersResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -352,6 +381,13 @@ export class Orders {
                     res.getOrderResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.GetOrderResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;

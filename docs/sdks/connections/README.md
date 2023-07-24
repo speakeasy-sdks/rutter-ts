@@ -84,7 +84,6 @@ sdk.connections.deleteConnection("quae").then((res: DeleteConnectionResponse) =>
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetAccessTokenResponse } from "rutter-api/dist/sdk/models/operations";
-import { Platform } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 
@@ -115,23 +114,6 @@ sdk.connections.getAccessToken("d6bb33cf-aa34-48c3-9bf4-07ee4fcf0c42").then((res
 ```typescript
 import { Rutter } from "rutter-api";
 import { GetStatusResponse } from "rutter-api/dist/sdk/models/operations";
-import {
-  GetConnectionStatusResponseConnectionPlatform,
-  GetConnectionStatusResponseStatusDisabledStatusDisabledReason,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesAccounts,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesBalanceSheets,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesCompanyInfo,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesCustomers,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesIncomeStatements,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesInvoices,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesItems,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesPayouts,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesPurchaseOrders,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesStore,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesTransactions,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesConfigEntitiesVendors,
-  GetConnectionStatusResponseStatusHistoricalSyncStatusBatchesProgressInfoStatus,
-} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
 

@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -81,6 +82,13 @@ export class Products {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.createProductResponse = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -159,6 +167,13 @@ export class Products {
                         JSON.parse(decodedRes),
                         shared.VariantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -217,6 +232,13 @@ export class Products {
                     res.deleteProductResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.DeleteProductResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -279,6 +301,13 @@ export class Products {
                         JSON.parse(decodedRes),
                         shared.DeleteVariantResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -339,6 +368,13 @@ export class Products {
                     res.getProductResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.GetProductResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -401,6 +437,13 @@ export class Products {
                         JSON.parse(decodedRes),
                         shared.ListProductCategoriesResponse
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -458,6 +501,13 @@ export class Products {
                     res.listProductsResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.ListProductsResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -536,6 +586,13 @@ export class Products {
                     res.patchProductResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.PatchProductResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
@@ -616,6 +673,13 @@ export class Products {
                     res.variantResponse = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.VariantResponse
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
                     );
                 }
                 break;
