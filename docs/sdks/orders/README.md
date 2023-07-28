@@ -14,11 +14,16 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateFulfillmentResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateFulfillmentRequest, CreateFulfillmentResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateOrderFulfillmentBody,
+  CreateOrderFulfillmentBodyFulfillment,
+  CreateOrderFulfillmentBodyFulfillmentAdditionalFields,
+  CreateOrderFulfillmentBodyFulfillmentLineItems,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.orders.createFulfillment({
+const createOrderFulfillmentBody: CreateOrderFulfillmentBody = {
   fulfillment: {
     additionalFields: {
       notifyCustomer: false,
@@ -39,7 +44,11 @@ sdk.orders.createFulfillment({
     trackingNumber: "voluptate",
     trackingUrl: "error",
   },
-}, "77a0ef2f-5360-428e-beef-934152ed7e25", "non").then((res: CreateFulfillmentResponse) => {
+};
+const accessToken: string = "77a0ef2f-5360-428e-beef-934152ed7e25";
+const id: string = "non";
+
+sdk.orders.createFulfillment(createOrderFulfillmentBody, accessToken, id).then((res: CreateFulfillmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -67,11 +76,18 @@ sdk.orders.createFulfillment({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateOrderRequest, CreateOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateOrderBody,
+  CreateOrderBodyOrder,
+  CreateOrderBodyOrderBillingAddress,
+  CreateOrderBodyOrderCustomer,
+  CreateOrderBodyOrderLineItems,
+  CreateOrderBodyOrderShippingAddress,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.orders.createOrder({
+const createOrderBody: CreateOrderBody = {
   order: {
     billingAddress: {
       address1: "delectus",
@@ -118,7 +134,10 @@ sdk.orders.createOrder({
       region: "vero",
     },
   },
-}, "4baf91e5-06ef-4890-a54b-475f16f56d38").then((res: CreateOrderResponse) => {
+};
+const accessToken: string = "4baf91e5-06ef-4890-a54b-475f16f56d38";
+
+sdk.orders.createOrder(createOrderBody, accessToken).then((res: CreateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -145,12 +164,16 @@ sdk.orders.createOrder({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetOrderRequest, GetOrderResponse } from "rutter-api/dist/sdk/models/operations";
 import { Expand1, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "5a3c4ac6-31b9-49e2-aced-8f9fdb9410f6";
+const id: string = "3bbf8178-37b0-41af-9d78-8624189eb448";
+const expand: Expand1 = Expand1.Transactions;
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.orders.getOrder("5a3c4ac6-31b9-49e2-aced-8f9fdb9410f6", "3bbf8178-37b0-41af-9d78-8624189eb448", Expand1.Transactions, ForceFetch.True).then((res: GetOrderResponse) => {
+sdk.orders.getOrder(accessToken, id, expand, forceFetch).then((res: GetOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -225,16 +248,19 @@ sdk.orders.listOrders({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { UpdateOrderResponse } from "rutter-api/dist/sdk/models/operations";
-import { UpdateOrderBodyOrderStatus } from "rutter-api/dist/sdk/models/shared";
+import { UpdateOrderRequest, UpdateOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { UpdateOrderBody, UpdateOrderBodyOrder, UpdateOrderBodyOrderStatus } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.orders.updateOrder({
+const updateOrderBody: UpdateOrderBody = {
   order: {
     status: UpdateOrderBodyOrderStatus.Archived,
   },
-}, "7f3c4cce-4b6d-4769-aff3-c5747501357e", "44f51f8b-084c-4319-be19-3a245467f948").then((res: UpdateOrderResponse) => {
+};
+const accessToken: string = "7f3c4cce-4b6d-4769-aff3-c5747501357e";
+const id: string = "44f51f8b-084c-4319-be19-3a245467f948";
+
+sdk.orders.updateOrder(updateOrderBody, accessToken, id).then((res: UpdateOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

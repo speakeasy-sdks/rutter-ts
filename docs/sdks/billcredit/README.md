@@ -10,12 +10,15 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetMemoResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetMemoRequest, GetMemoResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "39d22246-5694-4624-8708-4f7ab37cef02";
+const id: string = "225194db-5541-40ad-8669-af90a26c7cdc";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.billCredit.getMemo("39d22246-5694-4624-8708-4f7ab37cef02", "225194db-5541-40ad-8669-af90a26c7cdc", ForceFetch.False).then((res: GetMemoResponse) => {
+sdk.billCredit.getMemo(accessToken, id, forceFetch).then((res: GetMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

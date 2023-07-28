@@ -11,12 +11,15 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetAccountingMetricResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetAccountingMetricRequest, GetAccountingMetricResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "640d6a18-31c8-47ad-b596-fdf1ad837ae8";
+const metricName: string = "voluptatem";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.metrics.getAccountingMetric("640d6a18-31c8-47ad-b596-fdf1ad837ae8", "voluptatem", ForceFetch.False).then((res: GetAccountingMetricResponse) => {
+sdk.metrics.getAccountingMetric(accessToken, metricName, forceFetch).then((res: GetAccountingMetricResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,12 +47,15 @@ sdk.metrics.getAccountingMetric("640d6a18-31c8-47ad-b596-fdf1ad837ae8", "volupta
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetCommerceMetricResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetCommerceMetricRequest, GetCommerceMetricResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "1c19c95b-a998-4678-ba3f-696991af388c";
+const metricName: string = "repudiandae";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.metrics.getCommerceMetric("1c19c95b-a998-4678-ba3f-696991af388c", "repudiandae", ForceFetch.True).then((res: GetCommerceMetricResponse) => {
+sdk.metrics.getCommerceMetric(accessToken, metricName, forceFetch).then((res: GetCommerceMetricResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
