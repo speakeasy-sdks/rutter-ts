@@ -10,12 +10,14 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetBalanceResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetBalanceRequest, GetBalanceResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "22ae20da-16fc-42b2-b1a2-89c57e854e90";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.balance.getBalance("22ae20da-16fc-42b2-b1a2-89c57e854e90", ForceFetch.True).then((res: GetBalanceResponse) => {
+sdk.balance.getBalance(accessToken, forceFetch).then((res: GetBalanceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

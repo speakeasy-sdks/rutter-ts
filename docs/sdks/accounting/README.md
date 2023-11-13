@@ -71,12 +71,17 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateAccountResponse } from "rutter-api/dist/sdk/models/operations";
-import { AccountType, CurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateAccountRequest, CreateAccountResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  AccountType,
+  CreateAccount,
+  CreateAccountAdditionalFields,
+  CreateCreateAccountRequest,
+  CurrencyCode,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createAccount({
+const createCreateAccountRequest: CreateCreateAccountRequest = {
   account: {
     accountType: AccountType.AccountsPayable,
     additionalFields: {
@@ -87,7 +92,10 @@ sdk.accounting.createAccount({
     nominalCode: "1001",
     subsidiaryId: "00000000-0000-0000-0000-000000000000",
   },
-}, "a05dfc2d-df7c-4c78-8a1b-a928fc816742").then((res: CreateAccountResponse) => {
+};
+const accessToken: string = "a05dfc2d-df7c-4c78-8a1b-a928fc816742";
+
+sdk.accounting.createAccount(createCreateAccountRequest, accessToken).then((res: CreateAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -114,15 +122,19 @@ sdk.accounting.createAccount({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateAttachmentResponse } from "rutter-api/dist/sdk/models/operations";
-import { EntityType } from "rutter-api/dist/sdk/models/shared";
+import { CreateAttachmentRequest, CreateAttachmentResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateAttachmentBody, EntityType } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createAttachment({
+const createAttachmentBody: CreateAttachmentBody = {
   file: "impedit",
   fileName: "cum",
-}, "73920592-9396-4fea-b596-eb10faaa2352", EntityType.JournalEntries, "enim").then((res: CreateAttachmentResponse) => {
+};
+const accessToken: string = "73920592-9396-4fea-b596-eb10faaa2352";
+const entityType: EntityType = EntityType.JournalEntries;
+const id: string = "enim";
+
+sdk.accounting.createAttachment(createAttachmentBody, accessToken, entityType, id).then((res: CreateAttachmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -151,12 +163,18 @@ sdk.accounting.createAttachment({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateBillResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateBillCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateBillRequest, CreateBillResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateBill,
+  CreateBillCurrencyCode,
+  CreateBillLineItems,
+  CreateBillLineItemsItem,
+  CreateBillLinkedPurchaseOrders,
+  CreateCreateBillRequest,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createBill({
+const createCreateBillRequest: CreateCreateBillRequest = {
   bill: {
     accountId: "omnis",
     currencyCode: CreateBillCurrencyCode.Idr,
@@ -211,7 +229,10 @@ sdk.accounting.createBill({
     subsidiaryId: "nihil",
     vendorId: "magnam",
   },
-}, "ba4469b6-e214-4195-9890-afa563e2516f").then((res: CreateBillResponse) => {
+};
+const accessToken: string = "ba4469b6-e214-4195-9890-afa563e2516f";
+
+sdk.accounting.createBill(createCreateBillRequest, accessToken).then((res: CreateBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -238,12 +259,17 @@ sdk.accounting.createBill({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateBillCreditApplicationResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateBillCreditApplicationCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateBillCreditApplicationRequest, CreateBillCreditApplicationResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateBillCreditApplication,
+  CreateBillCreditApplicationAdditionalFields,
+  CreateBillCreditApplicationCurrencyCode,
+  CreateBillCreditApplicationLinkedBills,
+  CreateCreateBillCreditApplicationRequest,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createBillCreditApplication({
+const createCreateBillCreditApplicationRequest: CreateCreateBillCreditApplicationRequest = {
   billCreditApplication: {
     additionalFields: {
       accountId: "debitis",
@@ -268,7 +294,10 @@ sdk.accounting.createBillCreditApplication({
     transactionDate: "excepturi",
     vendorId: "cum",
   },
-}, "77f3a410-0674-4ebf-a928-0d1ba77a89eb").then((res: CreateBillCreditApplicationResponse) => {
+};
+const accessToken: string = "77f3a410-0674-4ebf-a928-0d1ba77a89eb";
+
+sdk.accounting.createBillCreditApplication(createCreateBillCreditApplicationRequest, accessToken).then((res: CreateBillCreditApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -295,12 +324,16 @@ sdk.accounting.createBillCreditApplication({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateBillCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateBillCreditMemoCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateBillCreditMemoRequest, CreateBillCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateBillCreditMemo,
+  CreateBillCreditMemoCurrencyCode,
+  CreateBillCreditMemoLineItems,
+  CreateCreateBillCreditMemoRequest,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createBillCreditMemo({
+const createCreateBillCreditMemoRequest: CreateCreateBillCreditMemoRequest = {
   billCreditMemo: {
     accountId: "asperiores",
     currencyCode: CreateBillCreditMemoCurrencyCode.Lbp,
@@ -319,7 +352,10 @@ sdk.accounting.createBillCreditMemo({
     ],
     vendorId: "optio",
   },
-}, "e5e6a95d-8a0d-4446-8e2a-f7a73cf3be45").then((res: CreateBillCreditMemoResponse) => {
+};
+const accessToken: string = "e5e6a95d-8a0d-4446-8e2a-f7a73cf3be45";
+
+sdk.accounting.createBillCreditMemo(createCreateBillCreditMemoRequest, accessToken).then((res: CreateBillCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -346,12 +382,16 @@ sdk.accounting.createBillCreditMemo({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateBillPaymentResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateBillPaymentCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateBillPaymentRequest, CreateBillPaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateBillPayment,
+  CreateBillPaymentCurrencyCode,
+  CreateBillPaymentLinkedBills,
+  CreateCreateBillPaymentRequest,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createBillPayment({
+const createCreateBillPaymentRequest: CreateCreateBillPaymentRequest = {
   billPayment: {
     accountId: "dolorem",
     currencyCode: CreateBillPaymentCurrencyCode.Xpd,
@@ -372,7 +412,10 @@ sdk.accounting.createBillPayment({
     transactionDate: "facilis",
     vendorId: "cupiditate",
   },
-}, "21879fce-953f-473e-b7fb-c7abd74dd39c").then((res: CreateBillPaymentResponse) => {
+};
+const accessToken: string = "21879fce-953f-473e-b7fb-c7abd74dd39c";
+
+sdk.accounting.createBillPayment(createCreateBillPaymentRequest, accessToken).then((res: CreateBillPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -399,11 +442,11 @@ sdk.accounting.createBillPayment({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateAccountingCustomerResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateAccountingCustomerRequest, CreateAccountingCustomerResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateAccountingCustomer, CreateCreateAccountingCustomerRequest } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createCustomer({
+const createCreateAccountingCustomerRequest: CreateCreateAccountingCustomerRequest = {
   customer: {
     contactName: "aut",
     customerName: "voluptatibus",
@@ -411,7 +454,10 @@ sdk.accounting.createCustomer({
     phone: "840.723.4148 x214",
     subsidiaryId: "laudantium",
   },
-}, "13f16d9f-5fce-46c5-9614-6c3e250fb008").then((res: CreateAccountingCustomerResponse) => {
+};
+const accessToken: string = "13f16d9f-5fce-46c5-9614-6c3e250fb008";
+
+sdk.accounting.createCustomer(createCreateAccountingCustomerRequest, accessToken).then((res: CreateAccountingCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -438,17 +484,20 @@ sdk.accounting.createCustomer({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateExpenseResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateExpenseRequest, CreateExpenseResponse } from "rutter-api/dist/sdk/models/operations";
 import {
+  CreateCreateExpenseRequest,
+  CreateExpense,
+  CreateExpenseAdditionalFields,
   CreateExpenseAdditionalFieldsPlaceOfSupply,
   CreateExpenseAdditionalFieldsTaxTreatment,
   CreateExpenseCurrencyCode,
   CreateExpenseExpenseType,
+  CreateExpenseLineItems,
 } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createExpense({
+const createCreateExpenseRequest: CreateCreateExpenseRequest = {
   expense: {
     accountId: "impedit",
     additionalFields: {
@@ -476,7 +525,10 @@ sdk.accounting.createExpense({
     transactionDate: "voluptas",
     vendorId: "libero",
   },
-}, "14429074-7477-48a7-bd46-6d28c10ab3cd").then((res: CreateExpenseResponse) => {
+};
+const accessToken: string = "14429074-7477-48a7-bd46-6d28c10ab3cd";
+
+sdk.accounting.createExpense(createCreateExpenseRequest, accessToken).then((res: CreateExpenseResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -503,12 +555,17 @@ sdk.accounting.createExpense({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateInvoiceCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateInvoiceRequest, CreateInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateInvoiceRequest,
+  CreateInvoice,
+  CreateInvoiceCurrencyCode,
+  CreateInvoiceLineItems,
+  CreateInvoiceLineItemsItem,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createInvoice({
+const createCreateInvoiceRequest: CreateCreateInvoiceRequest = {
   invoice: {
     currencyCode: CreateInvoiceCurrencyCode.Thb,
     customerId: "fuga",
@@ -537,7 +594,10 @@ sdk.accounting.createInvoice({
       },
     ],
   },
-}, "b3c20c4f-3789-4fd8-b1f9-9dd2efd121aa").then((res: CreateInvoiceResponse) => {
+};
+const accessToken: string = "b3c20c4f-3789-4fd8-b1f9-9dd2efd121aa";
+
+sdk.accounting.createInvoice(createCreateInvoiceRequest, accessToken).then((res: CreateInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -564,12 +624,16 @@ sdk.accounting.createInvoice({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateInvoiceCreditApplicationResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateInvoiceCreditApplicationCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateInvoiceCreditApplicationRequest, CreateInvoiceCreditApplicationResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateInvoiceCreditApplicationRequest,
+  CreateInvoiceCreditApplication,
+  CreateInvoiceCreditApplicationCurrencyCode,
+  CreateInvoiceCreditApplicationLinkedInvoices,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createInvoiceCreditApplication({
+const createCreateInvoiceCreditApplicationRequest: CreateCreateInvoiceCreditApplicationRequest = {
   invoiceCreditApplication: {
     accountId: "aliquid",
     currencyCode: CreateInvoiceCreditApplicationCurrencyCode.Xfu,
@@ -588,7 +652,10 @@ sdk.accounting.createInvoiceCreditApplication({
     memo: "repellendus",
     transactionDate: "officia",
   },
-}, "c7af515c-c413-4aa6-baae-8d67864dbb67").then((res: CreateInvoiceCreditApplicationResponse) => {
+};
+const accessToken: string = "c7af515c-c413-4aa6-baae-8d67864dbb67";
+
+sdk.accounting.createInvoiceCreditApplication(createCreateInvoiceCreditApplicationRequest, accessToken).then((res: CreateInvoiceCreditApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -615,11 +682,16 @@ sdk.accounting.createInvoiceCreditApplication({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateInvoiceCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateInvoiceCreditMemoRequest, CreateInvoiceCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateInvoiceCreditMemoRequest,
+  CreateInvoiceCreditMemo,
+  CreateInvoiceCreditMemoLineItems,
+  CreateInvoiceCreditMemoLineItemsItem,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createInvoiceCreditMemo({
+const createCreateInvoiceCreditMemoRequest: CreateCreateInvoiceCreditMemoRequest = {
   invoiceCreditMemo: {
     accountId: "corporis",
     currencyCode: "reiciendis",
@@ -668,7 +740,10 @@ sdk.accounting.createInvoiceCreditMemo({
       },
     ],
   },
-}, "fbe3a5aa-8e48-424d-8ab4-075088e51862").then((res: CreateInvoiceCreditMemoResponse) => {
+};
+const accessToken: string = "fbe3a5aa-8e48-424d-8ab4-075088e51862";
+
+sdk.accounting.createInvoiceCreditMemo(createCreateInvoiceCreditMemoRequest, accessToken).then((res: CreateInvoiceCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -695,12 +770,16 @@ sdk.accounting.createInvoiceCreditMemo({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateInvoicePaymentCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateInvoicePaymentRequest, CreateInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateInvoicePaymentRequest,
+  CreateInvoicePayment,
+  CreateInvoicePaymentCurrencyCode,
+  CreateInvoicePaymentLinkedInvoices,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createInvoicePayment({
+const createCreateInvoicePaymentRequest: CreateCreateInvoicePaymentRequest = {
   invoicePayment: {
     accountId: "sit",
     currencyCode: CreateInvoicePaymentCurrencyCode.Khr,
@@ -731,7 +810,10 @@ sdk.accounting.createInvoicePayment({
     totalAmount: 51.89,
     txnDate: "maiores",
   },
-}, "f2a54a31-e947-464a-be86-5e7956f9251a").then((res: CreateInvoicePaymentResponse) => {
+};
+const accessToken: string = "f2a54a31-e947-464a-be86-5e7956f9251a";
+
+sdk.accounting.createInvoicePayment(createCreateInvoicePaymentRequest, accessToken).then((res: CreateInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -758,12 +840,18 @@ sdk.accounting.createInvoicePayment({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateItemResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateItemType } from "rutter-api/dist/sdk/models/shared";
+import { CreateItemRequest, CreateItemResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateItemRequest,
+  CreateItem,
+  CreateItemAdditionalFields,
+  CreateItemBillItem,
+  CreateItemInvoiceItem,
+  CreateItemType,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createItem({
+const createCreateItemRequest: CreateCreateItemRequest = {
   item: {
     additionalFields: {
       itemId: "nostrum",
@@ -781,7 +869,10 @@ sdk.accounting.createItem({
     name: "Kristie Wyman",
     type: CreateItemType.Discount,
   },
-}, "faad4f9e-fc1b-4451-ac10-32648dc2f615").then((res: CreateItemResponse) => {
+};
+const accessToken: string = "faad4f9e-fc1b-4451-ac10-32648dc2f615";
+
+sdk.accounting.createItem(createCreateItemRequest, accessToken).then((res: CreateItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -808,12 +899,16 @@ sdk.accounting.createItem({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateJournalEntryResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateJournalEntryCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateJournalEntryRequest, CreateJournalEntryResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateJournalEntryRequest,
+  CreateJournalEntry,
+  CreateJournalEntryCurrencyCode,
+  CreateJournalEntryLineItems,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createJournalEntry({
+const createCreateJournalEntryRequest: CreateCreateJournalEntryRequest = {
   journalEntry: {
     currencyCode: CreateJournalEntryCurrencyCode.Bov,
     currencyRate: 5834.04,
@@ -841,7 +936,10 @@ sdk.accounting.createJournalEntry({
     subsidiaryId: "fugit",
     transactionDate: "cumque",
   },
-}, "a3aed011-7996-4312-bde0-4771778ff61d").then((res: CreateJournalEntryResponse) => {
+};
+const accessToken: string = "a3aed011-7996-4312-bde0-4771778ff61d";
+
+sdk.accounting.createJournalEntry(createCreateJournalEntryRequest, accessToken).then((res: CreateJournalEntryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -868,11 +966,15 @@ sdk.accounting.createJournalEntry({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreatePurchaseOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreatePurchaseOrderRequest, CreatePurchaseOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreatePurchaseOrderRequest,
+  CreatePurchaseOrder,
+  CreatePurchaseOrderLineItems,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createPurchaseOrder({
+const createCreatePurchaseOrderRequest: CreateCreatePurchaseOrderRequest = {
   purchaseOrder: {
     currency: "doloremque",
     currencyRate: 1173.15,
@@ -897,7 +999,10 @@ sdk.accounting.createPurchaseOrder({
     txnDate: "officia",
     vendorId: "suscipit",
   },
-}, "60659a1a-deaa-4b58-91d6-c645b08b6189").then((res: CreatePurchaseOrderResponse) => {
+};
+const accessToken: string = "60659a1a-deaa-4b58-91d6-c645b08b6189";
+
+sdk.accounting.createPurchaseOrder(createCreatePurchaseOrderRequest, accessToken).then((res: CreatePurchaseOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -924,11 +1029,16 @@ sdk.accounting.createPurchaseOrder({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateSalesOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateSalesOrderRequest, CreateSalesOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateSalesOrderRequest,
+  CreateSalesOrder,
+  CreateSalesOrderLineItems,
+  CreateSalesOrderLineItemsItem,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createSalesOrder({
+const createCreateSalesOrderRequest: CreateCreateSalesOrderRequest = {
   salesOrder: {
     classId: "veritatis",
     currencyCode: "rerum",
@@ -977,7 +1087,10 @@ sdk.accounting.createSalesOrder({
     memo: "enim",
     subsidiaryId: "sint",
   },
-}, "da757a59-ecfe-4f66-af1c-aa3383c2beb4").then((res: CreateSalesOrderResponse) => {
+};
+const accessToken: string = "da757a59-ecfe-4f66-af1c-aa3383c2beb4";
+
+sdk.accounting.createSalesOrder(createCreateSalesOrderRequest, accessToken).then((res: CreateSalesOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1004,12 +1117,18 @@ sdk.accounting.createSalesOrder({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { CreateVendorResponse } from "rutter-api/dist/sdk/models/operations";
-import { CreateVendorAddressesType, CreateVendorCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { CreateVendorRequest, CreateVendorResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateCreateVendorRequest,
+  CreateVendor,
+  CreateVendorAddresses,
+  CreateVendorAddressesType,
+  CreateVendorCurrencyCode,
+  CreateVendorSubsidiaries,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.createVendor({
+const createCreateVendorRequest: CreateCreateVendorRequest = {
   vendor: {
     addresses: [
       {
@@ -1058,7 +1177,10 @@ sdk.accounting.createVendor({
     vendorName: "molestiae",
     website: "delectus",
   },
-}, "92443da7-ce52-4b89-9c53-7c6454efb0b3").then((res: CreateVendorResponse) => {
+};
+const accessToken: string = "92443da7-ce52-4b89-9c53-7c6454efb0b3";
+
+sdk.accounting.createVendor(createCreateVendorRequest, accessToken).then((res: CreateVendorResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1085,12 +1207,15 @@ sdk.accounting.createVendor({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetAccountResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetAccountRequest, GetAccountResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "4896c3ca-5acf-4be2-bd57-07577929177d";
+const id: string = "itaque";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.accounting.getAccount("4896c3ca-5acf-4be2-bd57-07577929177d", "itaque", ForceFetch.False).then((res: GetAccountResponse) => {
+sdk.accounting.getAccount(accessToken, id, forceFetch).then((res: GetAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1118,12 +1243,16 @@ sdk.accounting.getAccount("4896c3ca-5acf-4be2-bd57-07577929177d", "itaque", Forc
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetAttachmentResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetAttachmentRequest, GetAttachmentResponse } from "rutter-api/dist/sdk/models/operations";
 import { EntityType, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "c646ecb5-7340-49e3-ab1e-5a2b12eb07f1";
+const entityType: EntityType = EntityType.Bills;
+const id: string = "laboriosam";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.accounting.getAttachment("c646ecb5-7340-49e3-ab1e-5a2b12eb07f1", EntityType.Bills, "laboriosam", ForceFetch.False).then((res: GetAttachmentResponse) => {
+sdk.accounting.getAttachment(accessToken, entityType, id, forceFetch).then((res: GetAttachmentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1152,12 +1281,15 @@ sdk.accounting.getAttachment("c646ecb5-7340-49e3-ab1e-5a2b12eb07f1", EntityType.
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetBillResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetBillRequest, GetBillResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "b99545fc-95fa-4889-b0e1-89dbb30fcb33";
+const id: string = "ea055b19-7cd4-44e2-b52d-82d3513bb6f4";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.accounting.getBill("b99545fc-95fa-4889-b0e1-89dbb30fcb33", "ea055b19-7cd4-44e2-b52d-82d3513bb6f4", ForceFetch.False).then((res: GetBillResponse) => {
+sdk.accounting.getBill(accessToken, id, forceFetch).then((res: GetBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1185,12 +1317,15 @@ sdk.accounting.getBill("b99545fc-95fa-4889-b0e1-89dbb30fcb33", "ea055b19-7cd4-44
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetBillPaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetBillPaymentRequest, GetBillPaymentResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "b656bcdb-35ff-42e4-b275-37a8cd9e7319";
+const id: string = "porro";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getBillPayment("b656bcdb-35ff-42e4-b275-37a8cd9e7319", "porro", ForceFetch.True).then((res: GetBillPaymentResponse) => {
+sdk.accounting.getBillPayment(accessToken, id, forceFetch).then((res: GetBillPaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1218,12 +1353,14 @@ sdk.accounting.getBillPayment("b656bcdb-35ff-42e4-b275-37a8cd9e7319", "porro", F
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetCompanyInfoResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetCompanyInfoRequest, GetCompanyInfoResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "77d525f7-7b11-44ee-b52f-f785fc37814d";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getCompanyInfo("77d525f7-7b11-44ee-b52f-f785fc37814d", ForceFetch.True).then((res: GetCompanyInfoResponse) => {
+sdk.accounting.getCompanyInfo(accessToken, forceFetch).then((res: GetCompanyInfoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1250,12 +1387,15 @@ sdk.accounting.getCompanyInfo("77d525f7-7b11-44ee-b52f-f785fc37814d", ForceFetch
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetAccountingCustomerResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetAccountingCustomerRequest, GetAccountingCustomerResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "c98e0c2b-b89e-4b75-9ad6-36c600503d8b";
+const id: string = "b31180f7-39ae-49e0-97eb-809e2810331f";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getCustomer("c98e0c2b-b89e-4b75-9ad6-36c600503d8b", "b31180f7-39ae-49e0-97eb-809e2810331f", ForceFetch.True).then((res: GetAccountingCustomerResponse) => {
+sdk.accounting.getCustomer(accessToken, id, forceFetch).then((res: GetAccountingCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1283,12 +1423,15 @@ sdk.accounting.getCustomer("c98e0c2b-b89e-4b75-9ad6-36c600503d8b", "b31180f7-39a
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetExpenseResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetExpenseRequest, GetExpenseResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "981d4c70-0b60-47f3-893c-73b9da3f2ced";
+const id: string = "a7e23f22-5741-41fa-b4b7-544e472e8028";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getExpense("981d4c70-0b60-47f3-893c-73b9da3f2ced", "a7e23f22-5741-41fa-b4b7-544e472e8028", ForceFetch.True).then((res: GetExpenseResponse) => {
+sdk.accounting.getExpense(accessToken, id, forceFetch).then((res: GetExpenseResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1316,12 +1459,15 @@ sdk.accounting.getExpense("981d4c70-0b60-47f3-893c-73b9da3f2ced", "a7e23f22-5741
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetInvoiceRequest, GetInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "7a5b4046-3a7d-4575-b140-0e764ad7334e";
+const id: string = "c1b781b3-6a08-4088-9100-efada200ef04";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getInvoice("7a5b4046-3a7d-4575-b140-0e764ad7334e", "c1b781b3-6a08-4088-9100-efada200ef04", ForceFetch.True).then((res: GetInvoiceResponse) => {
+sdk.accounting.getInvoice(accessToken, id, forceFetch).then((res: GetInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1349,12 +1495,15 @@ sdk.accounting.getInvoice("7a5b4046-3a7d-4575-b140-0e764ad7334e", "c1b781b3-6a08
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetInvoiceCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetInvoiceCreditMemoRequest, GetInvoiceCreditMemoResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "2eb2164c-f9ab-4836-ac72-3ffda9e06bee";
+const id: string = "4825c1fc-0e11-45c8-8bff-918544ec42de";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.accounting.getInvoiceCreditMemo("2eb2164c-f9ab-4836-ac72-3ffda9e06bee", "4825c1fc-0e11-45c8-8bff-918544ec42de", ForceFetch.False).then((res: GetInvoiceCreditMemoResponse) => {
+sdk.accounting.getInvoiceCreditMemo(accessToken, id, forceFetch).then((res: GetInvoiceCreditMemoResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1382,12 +1531,15 @@ sdk.accounting.getInvoiceCreditMemo("2eb2164c-f9ab-4836-ac72-3ffda9e06bee", "482
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetInvoicePaymentRequest, GetInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "cce8f197-7773-4e63-962a-7b408f05e3d4";
+const id: string = "8fdaf313-a1f5-4fd9-8259-c0b36f25ea94";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getInvoicePayment("cce8f197-7773-4e63-962a-7b408f05e3d4", "8fdaf313-a1f5-4fd9-8259-c0b36f25ea94", ForceFetch.True).then((res: GetInvoicePaymentResponse) => {
+sdk.accounting.getInvoicePayment(accessToken, id, forceFetch).then((res: GetInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1415,12 +1567,15 @@ sdk.accounting.getInvoicePayment("cce8f197-7773-4e63-962a-7b408f05e3d4", "8fdaf3
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetItemResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetItemRequest, GetItemResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "f3b756c1-1f6c-437a-9126-243835bbc05a";
+const id: string = "23a45cef-c5fd-4e10-a0ce-2169e510019c";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getItem("f3b756c1-1f6c-437a-9126-243835bbc05a", "23a45cef-c5fd-4e10-a0ce-2169e510019c", ForceFetch.True).then((res: GetItemResponse) => {
+sdk.accounting.getItem(accessToken, id, forceFetch).then((res: GetItemResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1448,12 +1603,15 @@ sdk.accounting.getItem("f3b756c1-1f6c-437a-9126-243835bbc05a", "23a45cef-c5fd-4e
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetJournalEntryResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetJournalEntryRequest, GetJournalEntryResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "dc5e3476-2799-4bfb-be69-49fb2bb4ecae";
+const id: string = "6c3d5db3-adeb-4d5d-aea4-c506a8aa94c0";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getJournalEntry("dc5e3476-2799-4bfb-be69-49fb2bb4ecae", "6c3d5db3-adeb-4d5d-aea4-c506a8aa94c0", ForceFetch.True).then((res: GetJournalEntryResponse) => {
+sdk.accounting.getJournalEntry(accessToken, id, forceFetch).then((res: GetJournalEntryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1481,12 +1639,15 @@ sdk.accounting.getJournalEntry("dc5e3476-2799-4bfb-be69-49fb2bb4ecae", "6c3d5db3
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetPurchaseOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetPurchaseOrderRequest, GetPurchaseOrderResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "644cf5e9-d9a4-4578-adc1-ac600dec001a";
+const id: string = "c802e2ec-09ff-48f0-b816-ff3477c13e90";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getPurchaseOrder("644cf5e9-d9a4-4578-adc1-ac600dec001a", "c802e2ec-09ff-48f0-b816-ff3477c13e90", ForceFetch.True).then((res: GetPurchaseOrderResponse) => {
+sdk.accounting.getPurchaseOrder(accessToken, id, forceFetch).then((res: GetPurchaseOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1514,12 +1675,15 @@ sdk.accounting.getPurchaseOrder("644cf5e9-d9a4-4578-adc1-ac600dec001a", "c802e2e
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetSalesOrderResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetSalesOrderRequest, GetSalesOrderResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "c14125b0-960a-4668-951a-472af923c594";
+const id: string = "9f83f350-cf87-46ff-b901-c6ecbb4e243c";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.accounting.getSalesOrder("c14125b0-960a-4668-951a-472af923c594", "9f83f350-cf87-46ff-b901-c6ecbb4e243c", ForceFetch.False).then((res: GetSalesOrderResponse) => {
+sdk.accounting.getSalesOrder(accessToken, id, forceFetch).then((res: GetSalesOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1547,12 +1711,15 @@ sdk.accounting.getSalesOrder("c14125b0-960a-4668-951a-472af923c594", "9f83f350-c
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetSubsidiaryResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetSubsidiaryRequest, GetSubsidiaryResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "789ffafe-da53-4e5a-a6e0-ac184c2b9c24";
+const id: string = "7c88373a-40e1-4942-b32e-55055756f5d5";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getSubsidiary("789ffafe-da53-4e5a-a6e0-ac184c2b9c24", "7c88373a-40e1-4942-b32e-55055756f5d5", ForceFetch.True).then((res: GetSubsidiaryResponse) => {
+sdk.accounting.getSubsidiary(accessToken, id, forceFetch).then((res: GetSubsidiaryResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1580,12 +1747,15 @@ sdk.accounting.getSubsidiary("789ffafe-da53-4e5a-a6e0-ac184c2b9c24", "7c88373a-4
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetTaxRateResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetTaxRateRequest, GetTaxRateResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "d0bd0af2-dfe1-43db-8f62-cba3f8941aeb";
+const id: string = "c0b80a69-24d3-4b2e-8fcc-8f895010f5dd";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getTaxRate("d0bd0af2-dfe1-43db-8f62-cba3f8941aeb", "c0b80a69-24d3-4b2e-8fcc-8f895010f5dd", ForceFetch.True).then((res: GetTaxRateResponse) => {
+sdk.accounting.getTaxRate(accessToken, id, forceFetch).then((res: GetTaxRateResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1613,12 +1783,15 @@ sdk.accounting.getTaxRate("d0bd0af2-dfe1-43db-8f62-cba3f8941aeb", "c0b80a69-24d3
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetVendorResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetVendorRequest, GetVendorResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "d6fa1804-e54c-482f-968a-363c8873e484";
+const id: string = "380b1f6b-8ca2-475a-a0a0-4c495cc69917";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.getVendor("d6fa1804-e54c-482f-968a-363c8873e484", "380b1f6b-8ca2-475a-a0a0-4c495cc69917", ForceFetch.True).then((res: GetVendorResponse) => {
+sdk.accounting.getVendor(accessToken, id, forceFetch).then((res: GetVendorResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1725,12 +1898,16 @@ sdk.accounting.listAttachments({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { ListBalanceSheetsResponse } from "rutter-api/dist/sdk/models/operations";
+import { ListBalanceSheetsRequest, ListBalanceSheetsResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "fefa9c95-f2ea-4c55-a5d3-07cfee81206e";
+const endDate: string = "sed";
+const forceFetch: ForceFetch = ForceFetch.False;
+const startDate: string = "sunt";
 
-sdk.accounting.listBalanceSheets("fefa9c95-f2ea-4c55-a5d3-07cfee81206e", "sed", ForceFetch.False, "sunt").then((res: ListBalanceSheetsResponse) => {
+sdk.accounting.listBalanceSheets(accessToken, endDate, forceFetch, startDate).then((res: ListBalanceSheetsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1876,12 +2053,16 @@ sdk.accounting.listBills({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { ListCashFlowStatementsResponse } from "rutter-api/dist/sdk/models/operations";
+import { ListCashFlowStatementsRequest, ListCashFlowStatementsResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "c4aa5f3c-abd9-405a-972e-056728227b2d";
+const endDate: string = "nesciunt";
+const forceFetch: ForceFetch = ForceFetch.True;
+const startDate: string = "sint";
 
-sdk.accounting.listCashFlowStatements("c4aa5f3c-abd9-405a-972e-056728227b2d", "nesciunt", ForceFetch.True, "sint").then((res: ListCashFlowStatementsResponse) => {
+sdk.accounting.listCashFlowStatements(accessToken, endDate, forceFetch, startDate).then((res: ListCashFlowStatementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2106,12 +2287,16 @@ sdk.accounting.listExpenses({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { ListIncomeStatementsResponse } from "rutter-api/dist/sdk/models/operations";
+import { ListIncomeStatementsRequest, ListIncomeStatementsResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "55554080-d40b-4cac-86cb-d6b5f3ec9093";
+const endDate: string = "accusantium";
+const forceFetch: ForceFetch = ForceFetch.True;
+const startDate: string = "repellat";
 
-sdk.accounting.listIncomeStatements("55554080-d40b-4cac-86cb-d6b5f3ec9093", "accusantium", ForceFetch.True, "repellat").then((res: ListIncomeStatementsResponse) => {
+sdk.accounting.listIncomeStatements(accessToken, endDate, forceFetch, startDate).then((res: ListIncomeStatementsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2413,12 +2598,15 @@ sdk.accounting.listPurchaseOrders({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { ListReportsResponse } from "rutter-api/dist/sdk/models/operations";
+import { ListReportsRequest, ListReportsResponse } from "rutter-api/dist/sdk/models/operations";
 import { Filter, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "63d48e93-5c2c-49e8-9f30-be3e43202d72";
+const filter: Filter = Filter.Tree;
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.accounting.listReports("63d48e93-5c2c-49e8-9f30-be3e43202d72", Filter.Tree, ForceFetch.True).then((res: ListReportsResponse) => {
+sdk.accounting.listReports(accessToken, filter, forceFetch).then((res: ListReportsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2602,11 +2790,11 @@ sdk.accounting.listVendors({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { UpdateBillResponse } from "rutter-api/dist/sdk/models/operations";
+import { UpdateBillRequest, UpdateBillResponse } from "rutter-api/dist/sdk/models/operations";
+import { CreateUpdateBillBodyRequest, UpdateBillBody } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.updateBill({
+const createUpdateBillBodyRequest: CreateUpdateBillBodyRequest = {
   bill: {
     documentNumber: "amet",
     dueDate: "occaecati",
@@ -2614,7 +2802,11 @@ sdk.accounting.updateBill({
     memo: "impedit",
     vendorId: "minima",
   },
-}, "8880983d-abf9-4ef3-bfdd-9f7f079af4d3", "5724cdb0-f4d2-4811-87d5-6844eded85a9").then((res: UpdateBillResponse) => {
+};
+const accessToken: string = "8880983d-abf9-4ef3-bfdd-9f7f079af4d3";
+const id: string = "5724cdb0-f4d2-4811-87d5-6844eded85a9";
+
+sdk.accounting.updateBill(createUpdateBillBodyRequest, accessToken, id).then((res: UpdateBillResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2642,12 +2834,17 @@ sdk.accounting.updateBill({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { UpdateInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
-import { UpdateInvoiceCurrencyCode } from "rutter-api/dist/sdk/models/shared";
+import { UpdateInvoiceRequest, UpdateInvoiceResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateUpdateInvoiceRequest,
+  UpdateInvoice,
+  UpdateInvoiceCurrencyCode,
+  UpdateInvoiceLineItems,
+  UpdateInvoiceLineItemsItem,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.updateInvoice({
+const createUpdateInvoiceRequest: CreateUpdateInvoiceRequest = {
   invoice: {
     currencyCode: UpdateInvoiceCurrencyCode.Bam,
     customerId: "eum",
@@ -2676,7 +2873,11 @@ sdk.accounting.updateInvoice({
       },
     ],
   },
-}, "86092e9c-3ddc-45f1-91de-a1026d541a4d", "190feb21-780b-4ccc-8dbb-ddb484708fb4").then((res: UpdateInvoiceResponse) => {
+};
+const accessToken: string = "86092e9c-3ddc-45f1-91de-a1026d541a4d";
+const id: string = "190feb21-780b-4ccc-8dbb-ddb484708fb4";
+
+sdk.accounting.updateInvoice(createUpdateInvoiceRequest, accessToken, id).then((res: UpdateInvoiceResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -2704,11 +2905,15 @@ sdk.accounting.updateInvoice({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { UpdateInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import { UpdateInvoicePaymentRequest, UpdateInvoicePaymentResponse } from "rutter-api/dist/sdk/models/operations";
+import {
+  CreateUpdateInvoicePaymentRequest,
+  UpdateInvoicePayment,
+  UpdateInvoicePaymentLinkedInvoices,
+} from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
-
-sdk.accounting.updateInvoicePayment({
+const createUpdateInvoicePaymentRequest: CreateUpdateInvoicePaymentRequest = {
   invoicePayment: {
     accountId: "repudiandae",
     customerId: "amet",
@@ -2733,7 +2938,11 @@ sdk.accounting.updateInvoicePayment({
     totalAmount: 5427.83,
     txnDate: "magnam",
   },
-}, "93825fdc-42c8-476c-ac2d-fb4cfc1c7623", "0f841fb1-bd23-4fdb-94db-6be5a685998e").then((res: UpdateInvoicePaymentResponse) => {
+};
+const accessToken: string = "93825fdc-42c8-476c-ac2d-fb4cfc1c7623";
+const id: string = "0f841fb1-bd23-4fdb-94db-6be5a685998e";
+
+sdk.accounting.updateInvoicePayment(createUpdateInvoicePaymentRequest, accessToken, id).then((res: UpdateInvoicePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

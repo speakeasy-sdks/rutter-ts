@@ -10,11 +10,12 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetJobResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetJobRequest, GetJobResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
+const id: string = "excepturi";
 
-sdk.jobs.getJob("excepturi").then((res: GetJobResponse) => {
+sdk.jobs.getJob(id).then((res: GetJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

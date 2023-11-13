@@ -13,12 +13,15 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetCustomerResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetCustomerRequest, GetCustomerResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "12d02529-270b-48d5-b22d-d895b8bcf24d";
+const id: string = "b9596933-52f7-4453-b994-d78de3b6e938";
+const forceFetch: ForceFetch = ForceFetch.False;
 
-sdk.customers.getCustomer("12d02529-270b-48d5-b22d-d895b8bcf24d", "b9596933-52f7-4453-b994-d78de3b6e938", ForceFetch.False).then((res: GetCustomerResponse) => {
+sdk.customers.getCustomer(accessToken, id, forceFetch).then((res: GetCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -46,12 +49,15 @@ sdk.customers.getCustomer("12d02529-270b-48d5-b22d-d895b8bcf24d", "b9596933-52f7
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetCustomerGroupResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetCustomerGroupRequest, GetCustomerGroupResponse } from "rutter-api/dist/sdk/models/operations";
 import { ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "f5abb7f6-6255-40a2-8382-ac483afd2315";
+const id: string = "bba65016-4e06-4f5b-b6ae-591bc8bdef36";
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.customers.getCustomerGroup("f5abb7f6-6255-40a2-8382-ac483afd2315", "bba65016-4e06-4f5b-b6ae-591bc8bdef36", ForceFetch.True).then((res: GetCustomerGroupResponse) => {
+sdk.customers.getCustomerGroup(accessToken, id, forceFetch).then((res: GetCustomerGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

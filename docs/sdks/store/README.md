@@ -10,12 +10,15 @@
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetStoreResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetStoreRequest, GetStoreResponse } from "rutter-api/dist/sdk/models/operations";
 import { Expand, ForceFetch } from "rutter-api/dist/sdk/models/shared";
 
 const sdk = new Rutter();
+const accessToken: string = "ee224460-443b-4c15-8188-c2f56e85da78";
+const expand: Expand = Expand.PlatformData;
+const forceFetch: ForceFetch = ForceFetch.True;
 
-sdk.store.getStore("ee224460-443b-4c15-8188-c2f56e85da78", Expand.PlatformData, ForceFetch.True).then((res: GetStoreResponse) => {
+sdk.store.getStore(accessToken, expand, forceFetch).then((res: GetStoreResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

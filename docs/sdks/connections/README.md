@@ -53,11 +53,12 @@ sdk.connections.createConnection({
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { DeleteConnectionResponse } from "rutter-api/dist/sdk/models/operations";
+import { DeleteConnectionRequest, DeleteConnectionResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
+const id: string = "quae";
 
-sdk.connections.deleteConnection("quae").then((res: DeleteConnectionResponse) => {
+sdk.connections.deleteConnection(id).then((res: DeleteConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -83,11 +84,12 @@ sdk.connections.deleteConnection("quae").then((res: DeleteConnectionResponse) =>
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetAccessTokenResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetAccessTokenRequest, GetAccessTokenResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
+const accessToken: string = "d6bb33cf-aa34-48c3-9bf4-07ee4fcf0c42";
 
-sdk.connections.getAccessToken("d6bb33cf-aa34-48c3-9bf4-07ee4fcf0c42").then((res: GetAccessTokenResponse) => {
+sdk.connections.getAccessToken(accessToken).then((res: GetAccessTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -113,11 +115,12 @@ sdk.connections.getAccessToken("d6bb33cf-aa34-48c3-9bf4-07ee4fcf0c42").then((res
 
 ```typescript
 import { Rutter } from "rutter-api";
-import { GetStatusResponse } from "rutter-api/dist/sdk/models/operations";
+import { GetStatusRequest, GetStatusResponse } from "rutter-api/dist/sdk/models/operations";
 
 const sdk = new Rutter();
+const accessToken: string = "b78f1562-6398-4a0d-8766-324ccb06c8ca";
 
-sdk.connections.getStatus("b78f1562-6398-4a0d-8766-324ccb06c8ca").then((res: GetStatusResponse) => {
+sdk.connections.getStatus(accessToken).then((res: GetStatusResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
