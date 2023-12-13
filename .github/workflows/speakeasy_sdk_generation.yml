@@ -23,7 +23,7 @@ jobs:
       mode: pr
       openapi_doc_auth_header: x-api-key
       openapi_docs: |
-        - https://app.speakeasyapi.dev/v1/apis/rutter/version/2023-03-14/schema/download
+        - ./rutter.yaml
       speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
