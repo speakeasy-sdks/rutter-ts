@@ -3,7 +3,6 @@
     <h1>Typescript SDK</h1>
    <p>Universal API for Commerce, Accounting, Payments, and More</p>
    <a href="https://docs.rutter.com/rest/2023-03-14/overview"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
-   <a href="https://github.com/speakeasy-sdks/rutter-ts/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/rutter-ts/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
